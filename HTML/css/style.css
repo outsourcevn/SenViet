@@ -1,0 +1,266 @@
+ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+header .banner{
+    width: 72%;
+}
+
+header .banner a img{
+    width: 100%;
+}
+
+header .login-area {
+    width: 28%;
+    font-size: 12px;
+    margin-top: 55px;
+}
+
+header .login-area input[type='text'] {
+    border-radius: 12px;
+    border: 1px solid #959595;
+    color: #959595;
+    line-height: 10px;
+    height: 25px;
+    width: 115px;
+    padding: 0px 10px;
+    background: #ebebeb;
+}
+
+header .login-area div.checkbox {
+    padding: 0px;
+    margin: 1px 0px;
+}
+
+header .login-area .login-box-item {
+    margin-top: 7px;
+    font-size: 12px;
+}
+
+nav{
+    background: linear-gradient(to bottom, #74c713, #3aa004);
+    height: 56px;
+}
+
+nav ul.main-nav {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+nav ul.main-nav a{
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    height: 56px;
+    line-height: 56px;
+    border-radius: 0px;
+    display: block;
+    text-align: center;
+    padding: 0px 11px;
+    text-decoration: none;
+}
+
+nav ul.main-nav li{
+    float: left;
+}
+
+nav ul.main-nav li.active a, nav ul.main-nav li a:hover{
+    background: #9ece0d;
+}
+
+nav #search-box input[name="keyword"]{
+    width: 124px;
+    height: 25px;
+    margin-top: 13px;
+    padding-left: 13px;
+    padding-right: 35px;
+    border-radius: 7px;
+    border: none;
+    background: url(../images/search-icon.png) no-repeat 95px center #9ece0d;    
+}
+
+/** Content*/
+div.home-content{
+    background: #eef2b3;
+}
+div.content{
+    padding: 15px 0px;
+}
+
+.carousel-indicators{
+    top: 50%;
+    left: 98% !important;
+    margin-left: auto;
+    padding-left: 0px;
+    width: auto;
+    
+}
+
+.carousel-indicators li.active {
+    background: #43a212;
+    width: 18px;
+    height: 18px;
+}
+
+.carousel-indicators li{
+    border: none;
+    background: #bec28f;
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+.product-slider {
+    background: #fff;
+}
+
+.product-slider .container{
+    position: relative;
+}
+
+.product-slider #next, .product-slider #prev{
+    position: absolute;
+    z-index: 1000;
+    top: 26%;
+    cursor: pointer;
+    font-size:50px;
+    opacity: 0.6;
+}
+
+.product-slider #next { right: -30px;}
+.product-slider #prev { left: -30px;}
+
+.product-slider .item{
+    height: 124px;
+    width: 170px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    
+    float:left;
+    margin: 10px;
+}
+
+.product-slider .item:hover a.overlay, .product-slider .item:hover .product-name{
+    display: block;
+}
+
+.product-slider .item a.overlay{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    z-index:10;
+    top: 0px;
+    left: 0px;
+    display: none;
+}
+
+.product-slider .item .product-name {
+    top: 45%;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 21;
+    font-weight: bold;
+    display: none;
+}
+
+.product-slider .item .product-name a{
+    color: #fff;
+    text-decoration: none;
+}
+
+/** Footer */
+footer{
+    padding: 10px 0px;
+    background: #0c6902;
+    color: #fff;
+}
+
+footer ul.footer-links{
+    margin-right:20px;
+    float: left;
+}
+
+footer ul.footer-links .footer-heading{
+    color: #9ece0d;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+footer ul.social-links{
+    float: right;
+    margin:0px;
+}
+
+footer ul.social-links li {
+    display: inline-block;
+    padding: 3px;
+    margin-top:15px;    
+}
+
+footer ul.social-links li:last-child{
+    padding-right: 0px;
+}
+
+footer div.banking{
+    float:right;
+    margin-bottom: 5px;
+}
+
+.login-form .login-container{
+    margin: 0px auto;
+    width: 40%;
+}
+
+.login-form .login-container form {
+    background: #ebebeb none repeat scroll 0 0;
+    border-radius: 7px;
+    padding: 20px;
+}
+
+.login-form .login-container .center{
+    text-align: center;
+}
+
+.login-form .login-container .loginElements{
+    width: 100%;
+    margin: 9px 0px;
+    height: 46px;
+    font-size: 16px;
+    line-height: 45px;
+    border-radius: 5px;
+    padding: 0px 10px;
+    border: 1px solid #959595;
+    
+}
+
+.login-form .login-container .inputRequired{
+    content:" *"; 
+    color: #e32;
+    position: absolute; 
+    margin: 15px 0px 0px -20px; 
+    font-size: xx-large; 
+    padding: 0 5px 0 0;
+}
+
+.login-form .login-container .loginBtn{
+    background: linear-gradient(to bottom, #74c713, #3aa004);
+    border: none;
+    padding: 12px 25px;
+    color: #fff;
+    float: right;
+    border-radius: 20px;
+}
+
+.login-form .login-container .loginBtn:focus{
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
+    opacity: 0.7;
+}
