@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^www.minhducck.net$ [NC]
+RewriteRule ^(.*)$ http://minhducck.net/$1 [R=301,L]
+
+RewriteCond $1 !^(index\.php|index\.html|css|js|fonts|public|library|images|template|robots\.txt)
+RewriteRule ^(.*)$ index.php?/$1 [L]
