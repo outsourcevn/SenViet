@@ -43,6 +43,20 @@
                     }
                 }
             });
+
+            jQuery('nav .main-nav li li').hover(
+                    function(){
+                        var parentNode = jQuery(this).parent().parent();
+
+                        jQuery(parentNode).css({'background-color': '#9ece0d'});
+                        jQuery(parentNode).children('a').css('color', '#0c6902');
+            },
+                    function(){
+                        var parentNode = jQuery(this).parent().parent();
+
+                        jQuery(parentNode).removeAttr('style');
+                        jQuery(parentNode).children('a').removeAttr('style');
+            });
         });
     </script>
 </head>
