@@ -1,7 +1,7 @@
 <?php
 Class Model_product extends CI_Model{
     const DB_TABLE = 'products';
-    
+
     //var $id;
     var $title              = '';
     var $description        = '';

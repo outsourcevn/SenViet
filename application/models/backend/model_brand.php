@@ -1,8 +1,8 @@
 <?php
 Class Model_brand extends CI_Model{
     const DB_TABLE = 'brand';
-    
-    var $id;
+
+    protected $id;
     var $brand_name;
     var $userid_created;
     var $created_date;

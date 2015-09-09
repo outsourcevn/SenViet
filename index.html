@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="minhducck" />
+    <meta charset="utf-8" />
+	<title>Title Site</title>
+    <!--Jquery-->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    
+    
+    <!--Custom Style-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+    <!--UI_TREE-->
+    <link rel="stylesheet" type="text/css" href="js/jstree/dist/themes/default/style.min.css" />
+    <script src="js/jstree/dist/jstree.min.js"></script>
+</head>
+
+<body>
+    <div id="event_result"></div>
+    <div id="jstree_demo_div">
+        <ul>
+            <li>Root node 1
+              <ul>
+                <li>Child node 1
+                    <ul>
+                        <li>AAAAAAAA</li>
+                        <li>BBBBBBBB</li>
+                    </ul>
+                </li>
+                <li><a href="#">Child node 2</a></li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+  <script>
+    $(document).ready(function(){
+        $('#jstree_demo_div').on('changed', function (e, data) {
+            
+            console.log(data);
+        }).jstree({
+            "core" : {
+                "themes" : {
+                    "responsive": true
+                }, 
+                // so that create works
+                "check_callback" : true
+            },
+            "state" : { "key" : "demo2" },
+            "plugins" : [ "contextmenu", "dnd", "state", "types" ]
+        });
+    });
+  </script>
+
+</body>
+</html>

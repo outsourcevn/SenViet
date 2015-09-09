@@ -2,7 +2,7 @@
 Class Model_usergroup extends CI_Model{
     const DB_TABLE = 'usergroup';
     
-    var $id;
+    protected $id;
     var	$title;
     var	$created_date;
     var	$updated_date;

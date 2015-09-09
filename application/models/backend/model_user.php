@@ -2,7 +2,7 @@
 Class Model_user extends CI_Model{
     const DB_TABLE = 'username';
     
-    var	$id;
+    protected $id;
     var	$username;
     var	$password;
     var	$email;
