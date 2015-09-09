@@ -8,11 +8,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="HomePage.html" class="navbar-brand">Sen Việt Group</a>
+            <a href="<?php echo base_url();?>" class="navbar-brand">Sen Việt Group</a>
         </div>
         <div class="navbar-collapse collapse" id="navbar">
             <ul class="nav navbar-nav">
-                <li  class="active"><a href="#">Trang chủ</a></li>
+                <li  class="active"><a href="<?php echo base_url()?>">Trang chủ</a></li>
                 <li><a href="#">Giới thiệu</a></li>
                 <li><a href="#">Tin tức</a></li>
                 <li><a href="#">Sản phẩm</a></li>
@@ -41,7 +41,7 @@
     <div class="container">
         <!--Banner-->
         <div class="main-banner pull-left col-lg-11">
-            <a href="HomePage.html" title="Công ty cổ phần ĐT SX &amp; TM Sen Việt Group"><img src="images/banner.png" alt="Công ty cổ phần ĐT SX &amp; TM Sen Việt Group"/></a>
+            <a href="<?php echo base_url();?>" title="Công ty cổ phần ĐT SX &amp; TM Sen Việt Group"><img src="images/banner.png" alt="Công ty cổ phần ĐT SX &amp; TM Sen Việt Group"/></a>
         </div>
         <!--/Banner-->
 
@@ -57,7 +57,7 @@
 <nav class="fixedContent">
     <div class="container">
         <ul class="pull-left main-nav">
-            <li  class="active"><a href="#">Trang chủ</a></li>
+            <li  class="active"><a href="<?php echo base_url()?>">Trang chủ</a></li>
             <li>
                 <a href="#">Giới thiệu</a>
                 <ul>
