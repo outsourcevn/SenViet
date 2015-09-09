@@ -1,171 +1,83 @@
-
-<!--Start Main Content-->
-<div class="main-content">
+<!--Main Content-->
+<div class="home-content">
     <div class="container">
-        <?php
-            if(isset($featured_product_list) && count($featured_product_list) > 0){
-        ?>
-        <!--Featured Product-->
-        <div class="featured-product">
-            <h1 class="featured-product-heading">
-                <span>Featured Products</span>
-            </h1>
-        </div>
-        
-        <!--Carousel-->
-        <div style="height: 385px!important; overflow-y: hidden;">
-            <div class="owl-carousel">
-                
-                <?php
-                    foreach($featured_product_list as $key => $val){
-                        $image = get_image_list($val->id, true);
-                        
-                        if(count($image) > 0){
-                ?>
-                
-                <div class="item clearfix">
-                    <div class="featured-item">
-                        <a href="<?php echo $val->alias?>.html">
-                            <img class="featured-product-img" src="<?php echo (isset($image->image_link) ? CMS_DOMAIN.$image->image_link : '');?>" height="380px"/>
-                        </a>
-                        
-                        <div class="col-md-12 featured-product-info">
-                            <h3 class="featured-product-title"><a href="<?php echo $val->alias?>.html"><?php echo $val->title?></a></h3>
-                            <div class="featured-product-data col-md-12">
-                                <div class="col-sm-6">
-                                    <h3 class="featured-product-price"><?php echo number_format((($val->price > $val->sale_price && $val->sale_price > 0) ? $val->sale_price : $val->price))?> VNĐ</h3>
-                                </div>
-                                <div class="col-sm-6 text-right">
-                                    <a href="#add-to-cart-<?php echo $val->id;?>" id="product_<?php echo $val->id;?>"  class="featured-product-cart add-to-cart"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <?php echo ($val->price > $val->sale_price && $val->sale_price > 0) ? '<div class="on-sale-ribbon">Sale</div>' : ''?>
-                        
-                    </div>
+        <?php if(count($slideData) > 0 && is_array($slideData)) :?>
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <?php for($i = 0; $i < count($slideData); $i++) { ?>
+                <li data-target="#carousel-example-generic" data-slide-to="<?php echo $i;?>" class="<?php echo ($i == 0) ? 'active' : ''?>"></li>
+                <?php } ?>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <?php $i = 0; foreach($slideData as $_slideItem) : ?>
+                <div class="item <?php echo ($i === 0) ? 'active' : ''?>">
+                    <a <?php if($_slideItem->link !== '') echo 'href="'.$_slideItem->link.'"'; ?>><img src="<?php echo base_url().$_slideItem->image_link;?>" alt="<?php echo strip_tags($_slideItem->caption);?>" title="<?php echo $_slideItem->title?>"></a>
                 </div>
-                <?php
-                        }
-                    }
-                ?>
+                <?php $i++; endforeach; ?>
             </div>
         </div>
-        <div class="clearfix"></div>
-        <!--END Carousel-->
-        <?php
-            }
-        ?>
-        
-        <?php
-            if(isset($hotest_product_list) && count($hotest_product_list) > 0){
-        ?>
-        <!--Featured Product-->
-        <div class="featured-product">
-            <h1 class="featured-product-heading">
-                <span>Hotest Products</span>
-            </h1>
+        <?php endif;?>
+    </div>
+
+    <div class="product-slider">
+        <div class="container">
+            <span id="prev"><i class="fa fa-chevron-circle-left"></i></span>
+            <span id="next"><i class="fa fa-chevron-circle-right"></i></span>
+            <ul id="product-slider">
+                <li class="item">
+                    <img src="images/product/1.jpg" alt="TÊN SẢN PHẨM" />
+                    <a class="overlay" href="#PRODUCT_LINK"></a>
+                    <span class="product-name"><a href="product-name">Tên sản phẩm</a></span>
+                </li>
+
+                <li class="item">
+                    <img src="images/product/2.jpg" alt="TÊN SẢN PHẨM" />
+                    <a class="overlay" href="#PRODUCT_LINK"></a>
+                    <span class="product-name"><a href="product-name">Tên sản phẩm</a></span>
+                </li>
+
+                <li class="item">
+                    <img src="images/product/1.jpg" alt="TÊN SẢN PHẨM" />
+                    <a class="overlay" href="#PRODUCT_LINK"></a>
+                    <span class="product-name"><a href="product-name">Tên sản phẩm</a></span>
+                </li>
+
+                <li class="item">
+                    <img src="images/product/2.jpg" alt="TÊN SẢN PHẨM" />
+                    <a class="overlay" href="#PRODUCT_LINK"></a>
+                    <span class="product-name"><a href="product-name">Tên sản phẩm</a></span>
+                </li>
+
+                <li class="item">
+                    <img src="images/product/1.jpg" alt="TÊN SẢN PHẨM" />
+                    <a class="overlay" href="#PRODUCT_LINK"></a>
+                    <span class="product-name"><a href="product-name">Tên sản phẩm</a></span>
+                </li>
+
+                <li class="item">
+                    <img src="images/product/2.jpg" alt="TÊN SẢN PHẨM" />
+                    <a class="overlay" href="#PRODUCT_LINK"></a>
+                    <span class="product-name"><a href="product-name">Tên sản phẩm</a></span>
+                </li>
+
+                <li class="item">
+                    <img src="images/product/1.jpg" alt="TÊN SẢN PHẨM" />
+                    <a class="overlay" href="#PRODUCT_LINK"></a>
+                    <span class="product-name"><a href="product-name">Tên sản phẩm</a></span>
+                </li>
+
+                <li class="item">
+                    <img src="images/product/2.jpg" alt="TÊN SẢN PHẨM" />
+                    <a class="overlay" href="#PRODUCT_LINK"></a>
+                    <span class="product-name"><a href="product-name">Tên sản phẩm</a></span>
+                </li>
+            </ul>
+
+            <div class="clearfix"></div>
         </div>
-        
-        
-        <!--Carousel-->
-        <div style="height: 385px!important; overflow-y: hidden;">
-            <div class="owl-carousel">
-                
-                <?php
-                    foreach($hotest_product_list as $key => $val){
-                        $image = get_thumbnail_image($val->id);
-                        
-                        if(count($image) > 0){
-                ?>
-                
-                <div class="item clearfix">
-                    <div class="featured-item">
-                        <a href="<?php echo $val->alias?>.html">
-                            <img class="featured-product-img" src="<?php echo (isset($image->image_link) ? CMS_DOMAIN.$image->image_link : '');?>" height="380px"/>
-                        </a>
-                        
-                        <div class="col-md-12 featured-product-info">
-                            <h3 class="featured-product-title"><a href="<?php echo $val->alias?>.html"><?php echo $val->title?></a></h3>
-                            <div class="featured-product-data col-md-12">
-                                <div class="col-sm-6">
-                                    <h3 class="featured-product-price"><?php echo number_format((($val->price > $val->sale_price && $val->sale_price > 0) ? $val->sale_price : $val->price))?> VNĐ</h3>
-                                </div>
-                                <div class="col-sm-6 text-right">
-                                    <a href="#add-to-cart-<?php echo $val->id;?>" id="product_<?php echo $val->id;?>"  class="featured-product-cart add-to-cart"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <?php echo ($val->price > $val->sale_price && $val->sale_price > 0) ? '<div class="on-sale-ribbon">Sale</div>' : ''?>
-                        
-                    </div>
-                </div>
-                <?php
-                        }
-                    }
-                ?>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-        <!--END Carousel-->
-        <?php
-            }
-        ?>
-        
-        <?php
-            if(isset($lastest_product_list) && count($lastest_product_list) > 0){
-        ?>
-        <!--Featured Product-->
-        <div class="featured-product">
-            <h1 class="featured-product-heading">
-                <span>Lastest Products</span>
-            </h1>
-        </div>
-        
-        
-        <!--Carousel-->
-        <div style="height: 385px!important; overflow-y: hidden;">
-            <div class="owl-carousel">
-                
-                <?php
-                    foreach($lastest_product_list as $key => $val){
-                        $image = get_thumbnail_image($val->id);
-                        
-                        if(count($image) > 0){
-                ?>
-                
-                <div class="item clearfix">
-                    <div class="featured-item">
-                        <a href="<?php echo $val->alias?>.html">
-                            <img class="featured-product-img" src="<?php echo (isset($image->image_link) ? CMS_DOMAIN.$image->image_link : '');?>" height="380px"/>
-                        </a>
-                        
-                        <div class="col-md-12 featured-product-info">
-                            <h3 class="featured-product-title"><a href="<?php echo $val->alias?>.html"><?php echo $val->title?></a></h3>
-                            <div class="featured-product-data col-md-12">
-                                <div class="col-sm-6">
-                                    <h3 class="featured-product-price"><?php echo number_format((($val->price > $val->sale_price && $val->sale_price > 0) ? $val->sale_price : $val->price))?> VNĐ</h3>
-                                </div>
-                                <div class="col-sm-6 text-right">
-                                    <a href="#add-to-cart-<?php echo $val->id;?>" id="product_<?php echo $val->id;?>"  class="featured-product-cart add-to-cart"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <?php echo ($val->price > $val->sale_price && $val->sale_price > 0) ? '<div class="on-sale-ribbon">Sale</div>' : ''?>
-                        
-                    </div>
-                </div>
-                <?php
-                        }
-                    }
-                ?>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-        <!--END Carousel-->
-        <?php
-            }
-        ?>
-        <br /><br /><br /><br />
-    </div>     
+    </div>
 </div>
-<!--End Main Content-->
+<!--/Main Content-->
