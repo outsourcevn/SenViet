@@ -8,6 +8,8 @@
     <meta name="keywords" content="<?php echo ($configuration->meta_keyword) ? $configuration->meta_keyword : 'Công ty cổ phần ĐT SX &amp; TM Sen Việt Group'?>">
     <meta name="author" content="minhducck">
 
+    <base href="<?php echo base_url();?>"/>
+    
     <!--Jquer-->
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
@@ -56,7 +58,12 @@
 
                     jQuery(parentNode).removeAttr('style');
                     jQuery(parentNode).children('a').removeAttr('style');
-                });
+                }
+            );
+
+            var activeNav = '.<?php echo $active_nav;?>';
+
+            jQuery(activeNav).addClass('active');
         });
     </script>
 </head>

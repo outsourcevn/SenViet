@@ -83,12 +83,8 @@
                 <li>
                     <a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/images">Images<span class="sub_icon glyphicon glyphicon-camera"></span></a>
                 </li>
-                
-                <li>
-                    <a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/orders">Orders<span class="sub_icon glyphicon glyphicon-usd"></span></a>
-                </li>
-                
-                <li><a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/reports">Reports<span class="sub_icon glyphicon glyphicon-calendar"></span></a></li>
+
+                <li><a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/contacts">Liên hệ<span class="sub_icon glyphicon glyphicon-envelope"></span></a></li>
             </ul>
         </div>
     

@@ -12,15 +12,15 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar">
             <ul class="nav navbar-nav">
-                <li  class="active"><a href="<?php echo base_url()?>">Trang chủ</a></li>
-                <li><a href="#">Giới thiệu</a></li>
-                <li><a href="#">Tin tức</a></li>
-                <li><a href="#">Sản phẩm</a></li>
-                <li><a href="#">Đào Tạo</a></li>
-                <li><a href="#">Chi nhánh</a></li>
-                <li><a href="#">Thông tin NPP</a></li>
-                <li><a href="#">Trợ giúp</a></li>
-                <li><a href="#">Liên hệ</a></li>
+                <li class="nav_home"><a href="<?php echo base_url()?>">Trang chủ</a></li>
+                <li class="nav_introduce"><a href="#">Giới thiệu</a></li>
+                <li class="nav_news"><a href="#">Tin tức</a></li>
+                <li class="nav_product"><a href="#">Sản phẩm</a></li>
+                <li class="nav_training"><a href="#">Đào Tạo</a></li>
+                <li class="nav_department"><a href="#">Chi nhánh</a></li>
+                <li class="nav_npp"><a href="#">Thông tin NPP</a></li>
+                <li class="nav_faq"><a href="#">Trợ giúp</a></li>
+                <li class="nav_contact"><a href="/contact/">Liên hệ</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="http://login.senvietgroup.vn/">Login</a></li>
@@ -47,7 +47,7 @@
 
         <!--Login Area-->
         <div class="login-dialog pull-right hidden-sm hidden-xs col-lg-1">
-            <button class="btn btn-success" type="button" name="login-btn" onclick="location.href='http://login.senvietgroup.vn'">Login</button>
+            <button class="btn btn-success" type="button" name="login-btn" onclick="location.href='http://login.senvietgroup.vn'">&nbsp;&nbsp;<i class="fa fa-key"></i>&nbsp;&nbsp; Login &nbsp;&nbsp;</button>
         </div>
         <!--/Login Area-->
         <div class="clearfix"></div>
@@ -57,8 +57,8 @@
 <nav class="fixedContent">
     <div class="container">
         <ul class="pull-left main-nav">
-            <li  class="active"><a href="<?php echo base_url()?>">Trang chủ</a></li>
-            <li>
+            <li  class="nav_home"><a href="<?php echo base_url()?>">Trang chủ</a></li>
+            <li class="nav_introduce">
                 <a href="#">Giới thiệu</a>
                 <ul>
                     <li class="subItems"><a href="#">Thư ngỏ</a></li>
@@ -69,8 +69,8 @@
                     <li class="subItems"><a href="#">Góc báo chí</a></li>
                 </ul>
             </li>
-            <li><a href="#">Tin tức</a></li>
-            <li>
+            <li class="nav_news"><a href="#">Tin tức</a></li>
+            <li class="nav_product">
                 <a href="#">Sản phẩm</a>
                 <ul>
                     <li class="subItems"><a href="#">Sản phẩm chức năng</a></li>
@@ -78,7 +78,7 @@
                     <li class="subItems"><a href="#">Hàng tiêu dùng</a></li>
                 </ul>
             </li>
-            <li>
+            <li class="nav_training">
                 <a href="#">Đào Tạo</a>
                 <ul>
                     <li class="subItems"><a href="#">Lịch làm việc</a></li>
@@ -88,7 +88,7 @@
                     <li class="subItems"><a href="#">Đào tạo - Nâng cao</a></li>
                 </ul>
             </li>
-            <li>
+            <li class="nav_department">
                 <a href="#">Chi nhánh</a>
                 <ul>
                     <li class="subItems"><a href="#">Chi nhánh miền Bắc</a></li>
@@ -96,7 +96,7 @@
                     <li class="subItems"><a href="#">Chi nhánh miền Nam</a></li>
                 </ul>
             </li>
-            <li>
+            <li class="nav_npp">
                 <a href="#">Thông tin NPP</a>
                 <ul>
                     <li class="subItems"><a href="#">Lịch sự kiện NPP</a></li>
@@ -106,8 +106,8 @@
                     <li class="subItems"><a href="#">Hình ảnh</a></li>
                 </ul>
             </li>
-            <li><a href="#">Trợ giúp</a></li>
-            <li><a href="#">Liên hệ</a></li>
+            <li class="nav_faq"><a href="#">Trợ giúp</a></li>
+            <li class="nav_contact"><a href="/contact/">Liên hệ</a></li>
         </ul>
 
         <div id="search-box" class="pull-right">

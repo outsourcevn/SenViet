@@ -18,13 +18,11 @@ class Home extends CI_Controller {
     {
         
         //Configs
-        $data['configs'] = $this->configs;
+        $data['configuration'] = $this->configs;
+        $data['active_nav'] = 'nav_home';
 
         //Slider Data
         $data['slideData']             = $this->Mslide->All(5);
-
-
-        $data['configuration'] = $this->configs;
 
 
         

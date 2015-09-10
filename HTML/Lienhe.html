@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Công ty cổ phần ĐT SX &amp; TM Sen Việt Group</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="Free Web tutorials">
+    <meta name="author" content="minhducck">
+
+    <!--Jquer-->
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
+    <script type="text/javascript" src="js/fixedScroll.js"></script>
+    <!--/Jquer-->
+
+    <!--Bootstrap-->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <!--/Bootstrap-->
+
+    <!--Custom Css-->
+    <link rel="stylesheet" href="css/style_new.css" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+    <!--/Custom Css-->
+
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+            jQuery('.fixedContent').fixedScroll();
+
+            jQuery('#product-slider').carouFredSel({
+                responsive: true,
+                width: '100%',
+                scroll: 2,
+                prev : '#prev',
+                next : '#next',
+                items: {
+                    width: 200,
+                    //	height: '30%',	//	optionally resize item-height
+                    visible: {
+                        min: 2,
+                        max: 6
+                    }
+                }
+            });
+
+            jQuery('nav .main-nav li li').hover(
+                    function(){
+                        var parentNode = jQuery(this).parent().parent();
+
+                        jQuery(parentNode).css({'background-color': '#9ece0d'});
+                        jQuery(parentNode).children('a').css('color', '#0c6902');
+                    },
+                    function(){
+                        var parentNode = jQuery(this).parent().parent();
+
+                        jQuery(parentNode).removeAttr('style');
+                        jQuery(parentNode).children('a').removeAttr('style');
+                    });
+        });
+    </script>
+</head>
+<body>
+<!--Navigation For mobile-->
+<nav class="navbar navbar-default navbar-static-top hidden-lg">
+    <div class="container">
+        <div class="navbar-header">
+            <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="HomePage.html" class="navbar-brand">Sen Việt Group</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Đào Tạo</a></li>
+                <li><a href="#">Chi nhánh</a></li>
+                <li><a href="#">Thông tin NPP</a></li>
+                <li><a href="#">Trợ giúp</a></li>
+                <li><a href="#" class="active">Liên hệ</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://login.senvietgroup.vn/">Login</a></li>
+                <li><a href="http://senvietgroup.vn/">Register</a></li>
+                <li>
+                    <div id="search-mobile" class="text-center">
+                        <form name="nav-search" method="GET" action="./">
+                            <input name="keyword" type="text" placeholder="Tìm kiếm..." />
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+<!--Navigation For mobile-->
+<header>
+    <div class="container">
+        <!--Banner-->
+        <div class="main-banner pull-left col-lg-11">
+            <a href="HomePage.html" title="Công ty cổ phần ĐT SX &amp; TM Sen Việt Group"><img src="images/banner.png" alt="Công ty cổ phần ĐT SX &amp; TM Sen Việt Group"/></a>
+        </div>
+        <!--/Banner-->
+
+        <!--Login Area-->
+        <div class="login-dialog pull-right hidden-sm hidden-xs col-lg-1">
+            <button class="btn btn-success" type="button" name="login-btn" onclick="location.href='http://login.senvietgroup.vn'">Login</button>
+        </div>
+        <!--/Login Area-->
+        <div class="clearfix"></div>
+    </div>
+</header>
+
+<nav class="fixedContent">
+    <div class="container">
+        <ul class="pull-left main-nav">
+            <li><a href="#">Trang chủ</a></li>
+            <li>
+                <a href="#">Giới thiệu</a>
+                <ul>
+                    <li class="subItems"><a href="#">Thư ngỏ</a></li>
+                    <li class="subItems"><a href="#">Ban lãnh đạo</a></li>
+                    <li class="subItems"><a href="#">Tầm nhìn - sứ mệnh</a></li>
+                    <li class="subItems"><a href="#">Văn hóa doanh nghiệp</a></li>
+                    <li class="subItems"><a href="#">Giải thưởng - chứng nhận</a></li>
+                    <li class="subItems"><a href="#">Góc báo chí</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Tin tức</a></li>
+            <li>
+                <a href="#">Sản phẩm</a>
+                <ul>
+                    <li class="subItems"><a href="#">Sản phẩm chức năng</a></li>
+                    <li class="subItems"><a href="#">Mỹ phẩm</a></li>
+                    <li class="subItems"><a href="#">Hàng tiêu dùng</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Đào Tạo</a>
+                <ul>
+                    <li class="subItems"><a href="#">Lịch làm việc</a></li>
+                    <li class="subItems"><a href="#">Chính sách công ty</a></li>
+                    <li class="subItems"><a href="#">Văn bản - pháp lý</a></li>
+                    <li class="subItems"><a href="#">Kiến thức - Sản phẩm</a></li>
+                    <li class="subItems"><a href="#">Đào tạo - Nâng cao</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Chi nhánh</a>
+                <ul>
+                    <li class="subItems"><a href="#">Chi nhánh miền Bắc</a></li>
+                    <li class="subItems"><a href="#">Chi nhánh miền Trung</a></li>
+                    <li class="subItems"><a href="#">Chi nhánh miền Nam</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Thông tin NPP</a>
+                <ul>
+                    <li class="subItems"><a href="#">Lịch sự kiện NPP</a></li>
+                    <li class="subItems"><a href="#">Danh hiệu NPP</a></li>
+                    <li class="subItems"><a href="#">QL thành công chia</a></li>
+                    <li class="subItems"><a href="#">CLB Sen Việt</a></li>
+                    <li class="subItems"><a href="#">Hình ảnh</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Trợ giúp</a></li>
+            <li class="active"><a href="#">Liên hệ</a></li>
+        </ul>
+
+        <div id="search-box" class="pull-right">
+            <form name="nav-search" method="GET" action="./">
+                <input name="keyword" type="text" placeholder="Tìm kiếm..." />
+            </form>
+        </div>
+        <div class="clearfix" style="clear: both;"></div>
+    </div>
+</nav>
+
+<div class="content">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="<?php echo base_url();?>"><i>Trang chủ</i></a></li>
+            <li class="active"><i>Liên hệ</i></li>
+        </ol>
+        <div class="col-lg-12">
+            <div class="col-lg-12" style="border-bottom: 1px dashed #aeaeae;">
+                <p class="company-heading">CÔNG TY CỔ PHẦN ĐT SX & TM SEN VIỆT GROUP</p>
+                <address>
+                    <p><i class="fa fa-map-marker" style="color: #f166ab"></i> &nbsp;Số 17/15 Phương Mai - Đống Đa - Hà Nội</p>
+                    <p><i class="fa fa-mobile" style="color: #f166ab"></i> &nbsp;&nbsp;0914 859 999</p>
+                    <p><i class="fa fa-envelope" style="color: #f166ab"></i> <a href="mailto:Senvietgroup@gmail.com">Senvietgroup@gmail.com</a> </p>
+                </address>
+            </div>
+            <br/>
+        </div>
+        <div class="clearfix"></div>
+        <br/>
+        <div class="col-lg-12">
+            <div class="col-lg-6 contact-form">
+                <form action="/contact/post" method="POST">
+                    <div class="col-lg-12">
+                        <div class="col-lg-3"><label for="full_name" class="required">Họ Tên</label></div>
+                        <div class="col-lg-9"><input type="text" name="full_name" id="full_name" required=""/></div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="col-lg-3"><label for="tel" class="required">Tel</label></div>
+                        <div class="col-lg-9"><input type="tel" name="tel" id="tel" required=""/></div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="col-lg-3"><label for="email" class="required">Email</label></div>
+                        <div class="col-lg-9"><input type="email" name="mail" id="email" required=""/></div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="col-lg-3"><label for="title" class="required">Tiêu đề</label></div>
+                        <div class="col-lg-9"><input type="text" name="title" id="title" required=""/></div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="col-lg-3"><label for="content" class="required">Nội dung</label></div>
+                        <div class="col-lg-9"><textarea name="content" id="content" cols="30" rows="10" required="" style="resize: none"></textarea></div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="col-lg-3"><label for="content">Gửi đến</label></div>
+                        <div class="col-lg-9">
+                            <input type="hidden" class="massage-to-value" name="to" value="0"/>
+                            <div class="btn-group massage-to">
+                                <button class="btn btn-success" type="button">Chọn người nhận</button>
+                                <button aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" class="btn btn-success dropdown-toggle" type="button">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Ban giám đốc</a></li>
+                                    <li><a href="#">Phòng kinh doanh</a></li>
+                                    <li><a href="#">Phòng marketing</a></li>
+                                </ul>
+
+                                <script>
+                                    jQuery(document).ready(function(){
+                                        jQuery('.massage-to ul li').click(function(e){
+                                            e.preventDefault();
+
+                                            $label = jQuery(this).children().html();
+                                            $mailTo = 0;
+                                            if($label == 'Ban giám đốc') $mailTo = 1;
+                                            if($label == 'Phòng kinh doanh') $mailTo = 2;
+                                            if($label == 'Phòng marketing') $mailTo = 3;
+
+                                            jQuery('.massage-to-value').val($mailTo);
+
+                                            jQuery('.massage-to button.btn-success').first().html($label);
+                                        });
+
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-9"><p><span class="text-danger">(*)</span> Thông tin bắt buộc </p> </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-9"><button name="cmd" class="contact-message-send" value="send" type="submit">Gửi</button></div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d931.1782851427769!2d105.8390258270572!3d21.004132975263936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac7995e278d3%3A0x96d1ecb492501ce1!2zMTUgUGjGsMahbmcgTWFpLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1441908015653" width="100%" height="260" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+        </div>
+    </div>
+</div>
+
+
+<!--Footer-->
+<footer>
+    <div class="container">
+        <ul class="footer-links">
+            <li><span class="footer-heading">CÔNG TY CỔ PHẦN ĐT SX &amp; TM SEN VIỆT</span></li>
+            <li><i class="fa fa-home"></i> Số 7/15 Phương Mai - Đống Đa - Hà Nội</li>
+            <li><i class="fa fa-mobile"></i> 0914 859 999</li>
+            <li><i class="fa fa-envelope"></i> senvietgroup@gmail.com</li>
+        </ul>
+
+        <ul class="footer-links">
+            <li><span class="footer-heading">Trang chủ • liên hệ • trợ giúp • quy định sử dụng • sơ đồ site</span></li>
+            <li>© Copyright Sen Viet Group 2015</li>
+            <li>Design by Solution </li>
+        </ul>
+
+        <ul class="footer-links social-links">
+            <li><a href="#FACEBOOK"><img src="images/twitter.png" alt="Twitter" /></a></li>
+            <li><a href="#FACEBOOK"><img src="images/facebook.png" alt="Facebook" /></a></li>
+            <li><a href="#FACEBOOK"><img src="images/gplus.png" alt="Google Plus" /></a></li>
+            <li><a href="#FACEBOOK"><img src="images/pinterest.png" alt="Pinterest" /></a></li>
+        </ul>
+
+        <div class="banking">
+            <img src="images/banks.png" alt="banks" />
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</footer>
+</body>
+</html>

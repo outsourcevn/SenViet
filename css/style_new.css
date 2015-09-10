@@ -310,3 +310,61 @@ footer div.banking{
     float:right;
     margin-bottom: 5px;
 }
+
+.breadcrumb{
+    background: none;
+}
+
+.breadcrumb > li + li::before{
+    color: #ccc;
+    content: "> ";
+    padding: 0 5px;
+}
+
+/***Contact*/
+.company-heading{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #39b54a;
+}
+
+label.required{
+    position: relative;
+}
+
+label.required::after {
+    color: red;
+    content: "*";
+    font-size: 9px;
+    position: absolute;
+    right: -7px;
+    top: 1px;
+}
+
+div.contact-form .col-lg-12 {
+    padding: 5px 0;
+}
+
+div.contact-form input, div.contact-form textarea {
+    width: 100%;
+}
+
+div.contact-form input{
+    height: 32px;
+    line-height: 32px;
+}
+
+button.contact-message-send{
+    background:  linear-gradient(to bottom, #74c713, #3aa004);
+    border: none;
+    padding: 5px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+}
+
+button.contact-message-send:focus{
+    background:  linear-gradient(to bottom, #3aa004, #74c713);
+}
