@@ -42,7 +42,8 @@ $route['default_controller'] = "home";
 $route['404_override'] = '';
 
 $route['(.*).html$'] = 'shop/detail/$1';
-$route['category/(.*)$'] = 'shop/category/$1';  
+$route['lien-he'] = 'contact/index';
+$route['lien-he/(.*)$'] = 'contact/$1';
 
 
 /* End of file routes.php */

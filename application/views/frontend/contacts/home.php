@@ -18,31 +18,47 @@
         <div class="clearfix"></div>
         <br/>
         <div class="col-lg-12">
+            <div class="col-lg-12">
+                <?php
+                if(validation_errors())
+                {
+                    ?>
+                    <blockquote class="bg-warning">
+                        <ul class="errors">
+                            <?php
+                                echo validation_errors('<li class="text-warning">', '</li>');
+                            ?>
+                        </ul>
+                    </blockquote>
+                <?php
+                }
+                ?>
+            </div>
             <div class="col-lg-6 contact-form">
-                <?php echo form_open('contact/post/')?>
+                <?php echo form_open('lien-he/post/')?>
                     <div class="col-lg-12">
                         <div class="col-lg-3"><label for="full_name" class="required">Họ Tên</label></div>
-                        <div class="col-lg-9"><input type="text" name="full_name" id="full_name" required=""/></div>
+                        <div class="col-lg-9"><input type="text" name="full_name" value="<?php echo set_value('full_name'); ?>" id="full_name" required=""/></div>
                     </div>
 
                     <div class="col-lg-12">
                         <div class="col-lg-3"><label for="tel" class="required">Tel</label></div>
-                        <div class="col-lg-9"><input type="tel" name="tel" id="tel" required=""/></div>
+                        <div class="col-lg-9"><input type="tel" name="tel" value="<?php echo set_value('tel'); ?>" id="tel" required=""/></div>
                     </div>
 
                     <div class="col-lg-12">
                         <div class="col-lg-3"><label for="email" class="required">Email</label></div>
-                        <div class="col-lg-9"><input type="email" name="email" id="email" required=""/></div>
+                        <div class="col-lg-9"><input type="email" name="email" value="<?php echo set_value('email'); ?>" id="email" required=""/></div>
                     </div>
 
                     <div class="col-lg-12">
                         <div class="col-lg-3"><label for="title" class="required">Tiêu đề</label></div>
-                        <div class="col-lg-9"><input type="text" name="title" id="title" required=""/></div>
+                        <div class="col-lg-9"><input type="text" name="title" value="<?php echo set_value('title'); ?>" id="title" required=""/></div>
                     </div>
 
                     <div class="col-lg-12">
                         <div class="col-lg-3"><label for="content" class="required">Nội dung</label></div>
-                        <div class="col-lg-9"><textarea name="content" id="content" rows="5" required="" style="resize: none"></textarea></div>
+                        <div class="col-lg-9"><textarea name="content" id="content" rows="5" required="" style="resize: none"><?php echo set_value('content'); ?></textarea></div>
                     </div>
 
                     <div class="col-lg-12">

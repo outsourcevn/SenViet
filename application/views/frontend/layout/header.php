@@ -20,7 +20,7 @@
                 <li class="nav_department"><a href="#">Chi nhánh</a></li>
                 <li class="nav_npp"><a href="#">Thông tin NPP</a></li>
                 <li class="nav_faq"><a href="#">Trợ giúp</a></li>
-                <li class="nav_contact"><a href="/contact/">Liên hệ</a></li>
+                <li class="nav_contact"><a href="/lien-he/">Liên hệ</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="http://login.senvietgroup.vn/">Login</a></li>
@@ -107,7 +107,7 @@
                 </ul>
             </li>
             <li class="nav_faq"><a href="#">Trợ giúp</a></li>
-            <li class="nav_contact"><a href="/contact/">Liên hệ</a></li>
+            <li class="nav_contact"><a href="/lien-he/">Liên hệ</a></li>
         </ul>
 
         <div id="search-box" class="pull-right">
