@@ -41,10 +41,13 @@
 $route['default_controller'] = "home";
 $route['404_override'] = '';
 
-$route['(.*).html$'] = 'shop/detail/$1';
+//$route['(.*).html$'] = 'shop/detail/$1';
 $route['lien-he'] = 'contact/index';
 $route['lien-he/(.*)$'] = 'contact/$1';
+$route['(.*).html$'] = 'news_detail/index/tin-tuc/$1';
 
+$route['tin-tuc'] = 'news/index/tin-tuc';
+$route['tin-tuc/(.*)$'] = 'news/index/tin-tuc/$1';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

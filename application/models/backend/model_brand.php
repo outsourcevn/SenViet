@@ -148,6 +148,7 @@ Class Model_brand extends CI_Model{
      * @return bool
      **/
      public function ModifyRow($NewData, $id){
+         $this->SelectByID($id);
         unset($NewData['id']);
         
         $NewData['updated_date'] = gmdate('Y-m-d H:i:s');

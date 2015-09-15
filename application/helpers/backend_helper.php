@@ -145,6 +145,44 @@ if(!function_exists('GenerateCategoryCheckList')){
     }
 }
 
+if(!function_exists('GenerateCategoryRadioList')){
+    function GenerateCategoryRadioList($data, $start = 0, $curent_category_id = null){
+        foreach($data as $key => $val){
+            if($val['lft'] == $val['rgt']-1){
+                if($val['parentid'] == $start){
+                    $str = '<li><label><input type="radio" name="category_id" value="'.$val['id'].'" ';
+
+                    if(isset($curent_category_id) && ($val['id']  == $curent_category_id)){
+                        $str .= 'checked';
+                    }
+
+                    $str .= ' /> '. $val['title'] .'</label></li>';
+
+                    echo $str;
+                }
+            }else{
+                if($val['parentid'] == $start){
+                    //echo '';
+
+                    $str = '<li><label><input type="radio" name="category_id" value="'.$val['id'].'" ';
+
+                    if(isset($curent_category_id) && ($val['id']  == $curent_category_id)){
+                        $str .= 'checked';
+                    }
+
+                    $str .= ' /> '. $val['title'] .'</label>';
+                    echo $str;
+                    echo '<ul class="radioList">';
+
+                    GenerateCategoryRadioList($data, $val['id'], $curent_category_id);
+
+                    echo '</ul></li>';
+                }
+            }
+        }
+    }
+}
+
 /**
  * Ham nay su dung de chuyen query tra ve cua CATE_PRODUCT sang mang 1 chieu
  **/

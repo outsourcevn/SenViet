@@ -69,7 +69,14 @@
                     <li class="subItems"><a href="#">Góc báo chí</a></li>
                 </ul>
             </li>
-            <li class="nav_news"><a href="#">Tin tức</a></li>
+            <li class="nav_news">
+                <a href="/tin-tuc/">Tin tức</a>
+                <ul>
+                    <li class="subItems"><a href="/tin-tuc/thong-bao">Thông báo</a></li>
+                    <li class="subItems"><a href="/tin-tuc/su-kien-noi-bo">Sự kiện nội bộ</a></li>
+                    <li class="subItems"><a href="/tin-tuc/hoat-dong-xa-hoi">Hoạt động xã hội</a></li>
+                </ul>
+            </li>
             <li class="nav_product">
                 <a href="#">Sản phẩm</a>
                 <ul>

@@ -1,35 +1,32 @@
 <?php
+Class Model_news extends CI_Model{
+    const DB_TABLE = 'news';
 
-Class Model_product extends CI_Model
-{
-    const DB_TABLE = 'products';
-
-    //var $id;
-    var $title = '';
-    var $description = '';
-    var $alias = '';
-    var $brand_id = 0;
-    var $meta_description = '';
-    var $meta_keyword = '';
-    var $meta_title = '';
-    var $publish = 1;
-    var $is_featured = 1;
-    var $status = 1;
-    var $price = 0;
-    var $sale_price = 0;
-    var $created_date = null;
-    var $updated_date = null;
-    var $userid_created = 1;
+    protected  $id;
+    public $title              = '';
+    public $content            = '';
+    public $description        = '';
+    public $alias              = '';
+    public $meta_description   = '';
+    public $meta_keyword       = '';
+    public $meta_title         = '';
+    public $publish            = 1;
+    public $is_featured        = 0;
+    public $thumbnail          = '';
+    public $created_date       = null;
+    public $updated_date       = null;
+    public $userid_created     = 1;
+    public $category_id        = 0;
+    public $order              = 0;
 
 
     /**
      * Day cac bien tu du lieu truyen ve ra doi tuong
      * @param array
      **/
-    function populate($arr)
-    {
-        foreach ($arr as $key => $val) {
-            if (property_exists(get_class($this), $key))
+    function populate($arr){
+        foreach($arr as $key => $val){
+            if(property_exists(get_class($this), $key))
                 $this->{$key} = $val;
         }
     }
@@ -39,12 +36,11 @@ Class Model_product extends CI_Model
      * @param array
      * @return array
      **/
-    public function SelectByX($param = null, $keyword = '', $orderby = '`ID` DESC')
-    {
-        if (is_array($param))
-            return $this->db->or_like('title', $keyword)->or_like('description', $keyword)->where($param)->order_by($orderby)->get(self::DB_TABLE)->result_array();
+    public function SelectByX($param = null, $keyword = '', $orderby = '`ID` DESC'){
+        if(is_array($param))
+            return $this->db->or_like('title', $keyword)->or_like('description', $keyword)->or_like('content', $keyword)->where($param)->order_by($orderby)->get(self::DB_TABLE)->result_array();
         else
-            return $this->db->or_like('title', $keyword)->or_like('description', $keyword)->order_by($orderby)->get(self::DB_TABLE)->result_array();
+            return $this->db->or_like('title', $keyword)->or_like('description', $keyword)->or_like('content', $keyword)->order_by($orderby)->get(self::DB_TABLE)->result_array();
 
         /** Tested OK **/
     }
@@ -54,12 +50,11 @@ Class Model_product extends CI_Model
      * @param array
      * @return integer
      **/
-    public function CountRow($keyword = '', $param = null)
-    {
-        if (is_array($param))
-            return $this->db->like('title', $keyword)->where($param)->get(self::DB_TABLE)->num_rows();
+    public function CountRow($keyword = '', $param = null){
+        if(is_array($param))
+            return $this->db->or_like('title', $keyword)->or_like('description', $keyword)->or_like('content', $keyword)->where($param)->get(self::DB_TABLE)->num_rows();
         else
-            return $this->db->like('title', $keyword)->get(self::DB_TABLE)->num_rows();
+            return $this->db->or_like('title', $keyword)->or_like('description', $keyword)->or_like('content', $keyword)->get(self::DB_TABLE)->num_rows();
     }
 
     /**
@@ -67,18 +62,17 @@ Class Model_product extends CI_Model
      * @param array
      * @return array
      **/
-    public function SelectByID($id = 0)
-    {
-        if (!is_numeric($id))
+    public function SelectByID($id = 0){
+        if(!is_numeric($id))
             return false;
 
-        if ($data = $this->db->where('id', $id)->get(self::DB_TABLE)->row_array()) {
+        if($data = $this->db->where('id', $id)->get(self::DB_TABLE)->row_array()){
             $this->populate($data);
 
             //print_r($this);
 
             return $this;
-        } else {
+        }else{
             return false;
         }
 
@@ -91,8 +85,7 @@ Class Model_product extends CI_Model
      * @param Array
      * @return Num Rows Affected
      **/
-    public function InsertNewItem($InputData = null, $uid = 1)
-    {
+    public function InsertNewItem($InputData = null, $uid = 1){
 
         $this->populate($InputData);
 
@@ -107,8 +100,7 @@ Class Model_product extends CI_Model
     /**
      * Return Inserted ID
      **/
-    public function inserted_id()
-    {
+    public function inserted_id(){
         return $this->db->insert_id();
     }
 
@@ -118,24 +110,24 @@ Class Model_product extends CI_Model
      * @param mixed
      * @return bool
      **/
-    public function delete($id)
-    {
-        if (is_array($id)) {
+    public function delete($id){
+        if(is_array($id)){
             $this->db->where_in('id', $id)->delete(self::DB_TABLE);
             $this->db->where_in('FK_id', $id)->delete('images');
             $this->db->where_in('product_id', $id)->delete('product_cate');
             return true;
         }
 
-        if (!is_numeric($id))
+        if(!is_numeric($id))
             return false;
 
-        if ($this->SelectByID($id)) {
+        if($this->SelectByID($id)){
             $this->db->delete(self::DB_TABLE, array('id' => $id));
             $this->db->delete('images', array('FK_id' => $id));
             $this->db->delete('product_cate', array('product_id' => $id));
             return true;
-        } else {
+        }
+        else{
             return false;
         }
 
@@ -148,20 +140,20 @@ Class Model_product extends CI_Model
      * @param integer
      * @return bool
      **/
-    public function toggle_item($field, $id)
-    {
-        if (is_array($id)) {
+    public function toggle_item($field, $id){
+        if(is_array($id)){
             $this->db->where_in('id', $id)->update(self::DB_TABLE, array($field => 1));
             return true;
         }
 
-        if (!is_numeric($id))
+        if(!is_numeric($id))
             return false;
 
-        if ($input_data = $this->SelectByID($id)) {
+        if($input_data = $this->SelectByID($id)){
             $this->db->update(self::DB_TABLE, array($field => ($input_data->{$field} == 1 ? 0 : 1)), array('id' => $id));
             return true;
-        } else {
+        }
+        else{
             return false;
         }
 
@@ -174,8 +166,7 @@ Class Model_product extends CI_Model
      * @param int
      * @return bool
      **/
-    public function ModifyRow($NewData, $id)
-    {
+    public function ModifyRow($NewData, $id){
         $this->SelectByID($id);
         $this->populate($NewData);
         $this->updated_date = gmdate('Y-m-d H:i:s');
@@ -189,13 +180,12 @@ Class Model_product extends CI_Model
     /**
      * Sort Function()
      **/
-    public function SortItems($params)
-    {
+    public function SortItems($params){
 
         $total_row_affected = 0;
 
-        if (isset($params) && count($params)) {
-            foreach ($params as $k => $v) {
+        if(isset($params) && count($params)){
+            foreach($params as $k => $v){
                 $this->db->update(self::DB_TABLE, array('order' => $v), array('id' => $k));
                 $total_row_affected += $this->db->affected_rows();
             }
@@ -207,33 +197,24 @@ Class Model_product extends CI_Model
     /**
      * Selecting Data With Filter Condition
      **/
-    public function SelectDataWithFilter($keyword = '', $category_id = null, $brand_id = null, $price_from = null, $price_to = null, $order_by = 'ID DESC', $page = 0, $perpage = CMS_ITEM_PER_PAGE)
-    {
+    public function SelectDataWithFilter($keyword = '', $category_id = null, $order_by = 'ID DESC', $page = 0, $perpage = CMS_ITEM_PER_PAGE){
         $this->db->select('*');
         $this->db->from(self::DB_TABLE);
-        $this->db->join('product_cate', self::DB_TABLE . '.id = product_cate.product_id', 'left');
 
-        if ($brand_id) {
-            $this->db->where('brand_id', $brand_id);
-        }
-
-        if ($category_id) {
+        if($category_id){
             $this->db->where('category_id', $category_id);
         }
 
-        if ($price_from) {
-            $this->db->where(array('price >=' => $price_from));
+        if($keyword){
+            $this->db->or_like(
+                array(
+                    'title' => $keyword,
+                    'description' => $keyword,
+                    'content' => $keyword
+                )
+            );
         }
 
-        if ($price_to) {
-            $this->db->where(array('price <=' => $price_to));
-        }
-
-        if ($keyword) {
-            $this->db->or_like(array('title' => $keyword, 'description' => $keyword));
-        }
-
-        $this->db->group_by('id');
         $this->db->order_by($order_by);
         $this->db->limit($perpage, $page);
 
@@ -242,33 +223,24 @@ Class Model_product extends CI_Model
         return $output;
     }
 
-    public function CountRowWithFilter($keyword = '', $category_id = null, $brand_id = null, $price_from = null, $price_to = null)
-    {
+    public function CountRowWithFilter($keyword = '', $category_id = null){
         $this->db->select('*');
         $this->db->from(self::DB_TABLE);
-        $this->db->join('product_cate', self::DB_TABLE . '.id = product_cate.product_id', 'left');
 
-        if ($brand_id) {
-            $this->db->where('brand_id', $brand_id);
-        }
 
-        if ($category_id) {
+        if($category_id){
             $this->db->where('category_id', $category_id);
         }
 
-        if ($price_from) {
-            $this->db->where(array('price >=' => $price_from));
+        if($keyword){
+            $this->db->or_like(
+                array(
+                    'title' => $keyword,
+                    'description' => $keyword,
+                    'content' => $keyword
+                )
+            );
         }
-
-        if ($price_to) {
-            $this->db->where(array('price <=' => $price_to));
-        }
-
-        if ($keyword) {
-            $this->db->or_like(array('title' => $keyword, 'description' => $keyword));
-        }
-
-        $this->db->group_by('id');
 
         $output = $this->db->get()->num_rows();
 

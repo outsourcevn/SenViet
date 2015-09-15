@@ -250,3 +250,16 @@ span.text-warnign{
     color:red;
     
 }
+
+.radioList{
+    list-style: none;
+}
+
+.radioList li{
+    padding-right: 3px;
+    list-style: none;
+}
+
+.radioList ul{
+    padding-right: 0px;
+}

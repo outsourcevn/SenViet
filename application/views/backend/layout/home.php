@@ -70,7 +70,15 @@
                         <li><a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/user/add">Thêm user</a></li>
                     </ul>
                 </li>
-                
+
+                <li>
+                    <a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/news">Bài đăng<span class="sub_icon glyphicon glyphicon-pencil"></span></a>
+                    <ul>
+                        <li><a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/news/">Quản lý bài đăng</a></li>
+                        <li><a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/category_news/">QL chuyên mục</a></li>
+                    </ul>
+                </li>
+
                 <li>
                     <a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/products">Sản phẩm<span class="sub_icon glyphicon glyphicon-shopping-cart"></span></a>
                     <ul>
