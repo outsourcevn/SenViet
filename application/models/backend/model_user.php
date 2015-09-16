@@ -190,7 +190,7 @@ Class Model_user extends CI_Model{
                 $this->password = $this->password_algorithm();
             }
             
-            $this->db->update(self::DB_TABLE, (array)$this, array('username' => $username));
+            $this->db->update(self::DB_TABLE, $this, array('username' => $username));
         }
         else{
             $this->populate($NewData);
