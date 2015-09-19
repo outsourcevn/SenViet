@@ -41,13 +41,22 @@
 $route['default_controller'] = "home";
 $route['404_override'] = '';
 
-//$route['(.*).html$'] = 'shop/detail/$1';
-$route['lien-he'] = 'contact/index';
-$route['lien-he/(.*)$'] = 'contact/$1';
+$route['san-pham'] = 'products';
+$route['san-pham/(.*).html$'] = 'products/detail/$1';
+
+$route['gioi-thieu/(.*).html$'] = 'introduce/detail/$1';
 $route['(.*).html$'] = 'news_detail/index/tin-tuc/$1';
 
 $route['tin-tuc'] = 'news/index/tin-tuc';
 $route['tin-tuc/(.*)$'] = 'news/index/tin-tuc/$1';
+
+$route['dao-tao'] = 'training/index/dao-tao';
+$route['dao-tao/(.*)$'] = 'training/index/$1';
+
+$route['gioi-thieu'] = 'introduce';
+
+$route['lien-he'] = 'contact/index';
+$route['lien-he/(.*)$'] = 'contact/$1';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

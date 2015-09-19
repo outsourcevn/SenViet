@@ -2,7 +2,7 @@
 
 define('CMS_FOLDER', '');
 
-define('CMS_DB_HOST', 'demo.senvietgroup.vn');
+define('CMS_DB_HOST', 'senvietgroup.vn');
 define('CMS_DB_USERNAME', 'senviet_dev');
 define('CMS_DB_PASSWORD', 'enJF7fYTYZDVqB9J');
 define('CMS_DB_NAME', 'senviet_dev');
@@ -10,8 +10,8 @@ define('CMS_DB_PREFIX', 'cms_');
 
 
 //Define Link
-define('CMS_DOMAIN', 'http://demo.senvietgroup.vn');
-define('CMS_BASE_URL', 'http://demo.senvietgroup.vn');
+define('CMS_DOMAIN', 'http://senviet.vn');
+define('CMS_BASE_URL', 'http://senviet.vn');
 define('CMS_LOGIN_BACKEND_URL', 'admin/auth/login');
 define('CMS_DEFAULT_BACKEND_URL', 'admin');
 

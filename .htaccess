@@ -5,3 +5,7 @@ RewriteRule ^(.*)$ http://minhducck.net/$1 [R=301,L]
 
 RewriteCond $1 !^(index\.php|index\.html|css|js|fonts|public|library|images|template|robots\.txt|HTML)
 RewriteRule ^(.*)$ index.php?/$1 [L]
+
+<FilesMatch ".(eot|ttf|otf|woff)">
+	Header set Access-Control-Allow-Origin "*"
+</FilesMatch>

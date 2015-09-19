@@ -1,13 +1,10 @@
 <?php
-class News extends CI_Controller{
+class Training extends CI_Controller{
     var $configs = null;
 
     public function __construct(){
         parent::__construct();
 
-        $this->load->model('frontend/model_category', 'Mcategory');
-        $this->load->model('frontend/model_products', 'Mproduct');
-        $this->load->model('frontend/model_slide', 'Mslide');
         $this->load->model('frontend/model_configs', 'Mconfigs');
         $this->configs = $this->Mconfigs->get_Configs();
     }
@@ -17,7 +14,7 @@ class News extends CI_Controller{
         $alias = $this->uri->uri_string();
         //Configs
         $data['configuration'] = $this->configs;
-        $data['active_nav'] = 'nav_news';
+        $data['active_nav'] = 'nav_training';
 
         $rs = $this->db->where('alias', $alias)->where('publish', 1)->get('category_news');
 

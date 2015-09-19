@@ -16,29 +16,17 @@
         </div>
         <div class="col-lg-12">
             <div class="col-lg-3 row">
-                <?php if(is_array($list_left_category) && count($list_left_category) > 0) :?>
-                <div class="panel-left">
-                    <div class="left-panel-heading">Tin Tức Khác</div>
-                    <div class="panel-left-body">
-                        <ul class="left-panel-contain">
-                            <?php foreach($list_left_category as $_category):?>
-                            <li class="<?php echo ($cur_category->id === $_category->id) ? 'active' : ''?>"><a href="<?php echo $_category->alias?>"><?php echo $_category->title?></a></li>
-                            <?php endforeach;?>
-                        </ul>
-                    </div>
-                </div>
-                <?php endif;?>
-                <?php if(isset($featuredProducts) && is_array($featuredProducts) && count($featuredProducts) > 0) :?>
-                <div class="panel-left">
-                        <div class="left-panel-heading">Sản phẩm bán chạy</div>
+                <?php if(is_array($introduceNews) && count($introduceNews) > 0) :?>
+                    <div class="panel-left">
+                        <div class="left-panel-heading">Giới thiệu</div>
                         <div class="panel-left-body">
                             <ul class="left-panel-contain">
-                                <?php foreach($featuredProducts as $_product):?>
-                                    <li><a href="<?php echo "/san-pham/".$_product->alias?>.html"><?php echo $_product->title?></a></li>
+                                <?php foreach($introduceNews as $_news):?>
+                                    <li><a href="<?php echo $_news->alias?>.html"><?php echo $_news->title?></a></li>
                                 <?php endforeach;?>
                             </ul>
                         </div>
-                </div>
+                    </div>
                 <?php endif;?>
             </div>
             <div class="col-lg-9 main-content-container">

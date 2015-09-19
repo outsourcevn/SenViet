@@ -2,14 +2,39 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title><?php echo ($configuration->meta_title) ? $configuration->meta_title : 'Công ty cổ phần ĐT SX &amp; TM Sen Việt Group';?></title>
+    <title><?php echo (isset($seo['title']) ? ($seo['title'] . ' - ') : "") ;echo ($configuration->meta_title) ? $configuration->meta_title : 'Công ty cổ phần ĐT SX &amp; TM Sen Việt Group';?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="description" content="<?php echo ($configuration->meta_description) ? $configuration->meta_description : 'Công ty cổ phần ĐT SX &amp; TM Sen Việt Group'?>">
-    <meta name="keywords" content="<?php echo ($configuration->meta_keyword) ? $configuration->meta_keyword : 'Công ty cổ phần ĐT SX &amp; TM Sen Việt Group'?>">
+    <meta name="description" content="<?php echo (isset($seo['description']) ? ($seo['description'] . ' - ') : "") ;echo ($configuration->meta_description) ? $configuration->meta_description : 'Công ty cổ phần ĐT SX &amp; TM Sen Việt Group'?>">
+    <meta name="keywords" content="<?php echo (isset($seo['keywords']) ? ($seo['keywords'] . ', ') : "") ;echo ($configuration->meta_keyword) ? $configuration->meta_keyword : 'Công ty cổ phần ĐT SX &amp; TM Sen Việt Group'?>">
     <meta name="author" content="minhducck">
 
+    <!--For openGraph Facebook-->
+    <meta property="og:url" content="<?php echo current_url();?>" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="<?php echo (isset($seo['title']) ? ($seo['title'] . ' - ') : "") ;echo ($configuration->meta_title) ? $configuration->meta_title : 'Công ty cổ phần ĐT SX &amp; TM Sen Việt Group';?>" />
+    <meta property="og:description"   content="<?php echo (isset($seo['description']) ? ($seo['description'] . ' - ') : "") ;echo ($configuration->meta_description) ? $configuration->meta_description : 'Công ty cổ phần ĐT SX &amp; TM Sen Việt Group'?>" />
+    <?php if(isset($seo['og_image'])) echo '<meta property="og:image" content="'.$seo['og_image'].'"/>';?>
+
     <base href="<?php echo base_url();?>"/>
-    
+    <!--Facebook SDK-->
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '<?php echo isset($configuration->fb_app_id)? $configuration->fb_app_id : '1492390527753008'?>',
+                xfbml      : true,
+                version    : 'v2.4'
+            });
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
     <!--Jquer-->
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>

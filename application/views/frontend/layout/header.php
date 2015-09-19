@@ -13,10 +13,10 @@
         <div class="navbar-collapse collapse" id="navbar">
             <ul class="nav navbar-nav">
                 <li class="nav_home"><a href="<?php echo base_url()?>">Trang chủ</a></li>
-                <li class="nav_introduce"><a href="#">Giới thiệu</a></li>
+                <li class="nav_introduce"><a href="/gioi-thieu/">Giới thiệu</a></li>
                 <li class="nav_news"><a href="#">Tin tức</a></li>
                 <li class="nav_product"><a href="#">Sản phẩm</a></li>
-                <li class="nav_training"><a href="#">Đào Tạo</a></li>
+                <li class="nav_training"><a href="/dao-tao/">Đào Tạo</a></li>
                 <li class="nav_department"><a href="#">Chi nhánh</a></li>
                 <li class="nav_npp"><a href="#">Thông tin NPP</a></li>
                 <li class="nav_faq"><a href="#">Trợ giúp</a></li>
@@ -59,23 +59,12 @@
         <ul class="pull-left main-nav">
             <li  class="nav_home"><a href="<?php echo base_url()?>">Trang chủ</a></li>
             <li class="nav_introduce">
-                <a href="#">Giới thiệu</a>
-                <ul>
-                    <li class="subItems"><a href="#">Thư ngỏ</a></li>
-                    <li class="subItems"><a href="#">Ban lãnh đạo</a></li>
-                    <li class="subItems"><a href="#">Tầm nhìn - sứ mệnh</a></li>
-                    <li class="subItems"><a href="#">Văn hóa doanh nghiệp</a></li>
-                    <li class="subItems"><a href="#">Giải thưởng - chứng nhận</a></li>
-                    <li class="subItems"><a href="#">Góc báo chí</a></li>
-                </ul>
+                <a href="/gioi-thieu/">Giới thiệu</a>
+                <?php echo genIntroduceNavItem();?>
             </li>
             <li class="nav_news">
                 <a href="/tin-tuc/">Tin tức</a>
-                <ul>
-                    <li class="subItems"><a href="/tin-tuc/thong-bao">Thông báo</a></li>
-                    <li class="subItems"><a href="/tin-tuc/su-kien-noi-bo">Sự kiện nội bộ</a></li>
-                    <li class="subItems"><a href="/tin-tuc/hoat-dong-xa-hoi">Hoạt động xã hội</a></li>
-                </ul>
+                <?php echo genNewsNavItem();?>
             </li>
             <li class="nav_product">
                 <a href="#">Sản phẩm</a>
@@ -86,14 +75,8 @@
                 </ul>
             </li>
             <li class="nav_training">
-                <a href="#">Đào Tạo</a>
-                <ul>
-                    <li class="subItems"><a href="#">Lịch làm việc</a></li>
-                    <li class="subItems"><a href="#">Chính sách công ty</a></li>
-                    <li class="subItems"><a href="#">Văn bản - pháp lý</a></li>
-                    <li class="subItems"><a href="#">Kiến thức - Sản phẩm</a></li>
-                    <li class="subItems"><a href="#">Đào tạo - Nâng cao</a></li>
-                </ul>
+                <a href="/dao-tao/">Đào Tạo</a>
+                <?php echo genTrainingNavItem();?>
             </li>
             <li class="nav_department">
                 <a href="#">Chi nhánh</a>

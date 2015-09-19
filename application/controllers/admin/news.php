@@ -130,8 +130,8 @@ class News extends CI_Controller {
 
             //FORM VALIDATION RULES
             $this->form_validation->set_rules('title', 'Tiêu đề', 'required');
-            $this->form_validation->set_rules('description', 'Mô tả ngắn', 'trim|required|min_length[20]');
-            $this->form_validation->set_rules('content', 'Nội dung', 'required|min_length[50]');
+            $this->form_validation->set_rules('description', 'Mô tả ngắn', 'trim');
+            $this->form_validation->set_rules('content', 'Nội dung', 'trim|required');
             $this->form_validation->set_rules('thumbnail', 'Ảnh đại diện', 'trim|required');
             $this->form_validation->set_rules('category_id', 'Danh mục', 'required|is_numeric');
             $this->form_validation->set_rules('alias', 'Alias', 'callback__exist_alias');
@@ -190,8 +190,8 @@ class News extends CI_Controller {
 
             //FORM VALIDATION RULES
             $this->form_validation->set_rules('title', 'Tiêu đề', 'required');
-            $this->form_validation->set_rules('description', 'Mô tả ngắn', 'trim|required|min_length[20]');
-            $this->form_validation->set_rules('content', 'Nội dung', 'required|min_length[50]');
+            $this->form_validation->set_rules('description', 'Mô tả ngắn', 'trim');
+            $this->form_validation->set_rules('content', 'Nội dung', 'trim|required');
             $this->form_validation->set_rules('thumbnail', 'Ảnh đại diện', 'trim|required');
             $this->form_validation->set_rules('category_id', 'Danh mục', 'required|is_numeric');
             $this->form_validation->set_rules('alias', 'Alias', 'callback__exist_alias['.$raw_data['alias'].']');

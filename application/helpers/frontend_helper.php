@@ -126,3 +126,81 @@ if(!function_exists('CountItemsOnCart')){
         return count($CI->session->userdata('cart'));
     }
 }
+
+if(!function_exists('genIntroduceNavItem')){
+    function genIntroduceNavItem(){
+        $CI = &get_instance();
+
+        $introduceId = $CI->db->where('alias', 'gioi-thieu')->get('category_news')->row_object()->id;
+
+        $posts = $CI->db
+            ->where('publish', 1)
+            ->where('category_id', $introduceId)
+            ->order_by('order', 'ASC')
+            ->order_by('created_date', 'DESC')
+            ->get('news')
+            ->result_object();
+
+        $return = '<ul>';
+
+        foreach($posts as $_post){
+            $return .= '<li class="subItems"><a href="'.$_post->alias.'.html">'.$_post->title.'</a></li>';
+        }
+
+        $return .= '</ul>';
+
+        return $return;
+    }
+}
+
+if(!function_exists('genNewsNavItem')){
+    function genNewsNavItem(){
+        $CI = &get_instance();
+
+        $newsId = $CI->db->where('alias', 'tin-tuc')->get('category_news')->row_object()->id;
+
+        $posts = $CI->db
+            ->where('publish', 1)
+            ->where('parentid', $newsId)
+            ->order_by('order', 'ASC')
+            ->order_by('id', 'ASC')
+            ->get('category_news')
+            ->result_object();
+
+        $return = '<ul>';
+
+        foreach($posts as $_post){
+            $return .= '<li class="subItems"><a href="'.$_post->alias.'">'.$_post->title.'</a></li>';
+        }
+
+        $return .= '</ul>';
+
+        return $return;
+    }
+}
+
+if(!function_exists('genTrainingNavItem')){
+    function genTrainingNavItem(){
+        $CI = &get_instance();
+
+        $newsId = $CI->db->where('alias', 'dao-tao')->get('category_news')->row_object()->id;
+
+        $posts = $CI->db
+            ->where('publish', 1)
+            ->where('parentid', $newsId)
+            ->order_by('order', 'ASC')
+            ->order_by('id', 'ASC')
+            ->get('category_news')
+            ->result_object();
+
+        $return = '<ul>';
+
+        foreach($posts as $_post){
+            $return .= '<li class="subItems"><a href="'.$_post->alias.'">'.$_post->title.'</a></li>';
+        }
+
+        $return .= '</ul>';
+
+        return $return;
+    }
+}
