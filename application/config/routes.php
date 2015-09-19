@@ -45,6 +45,7 @@ $route['san-pham'] = 'products';
 $route['san-pham/(.*).html$'] = 'products/detail/$1';
 
 $route['gioi-thieu/(.*).html$'] = 'introduce/detail/$1';
+$route['chi-nhanh/(.*).html'] = 'department/detail/$1';
 $route['(.*).html$'] = 'news_detail/index/tin-tuc/$1';
 
 $route['tin-tuc'] = 'news/index/tin-tuc';
@@ -54,6 +55,7 @@ $route['dao-tao'] = 'training/index/dao-tao';
 $route['dao-tao/(.*)$'] = 'training/index/$1';
 
 $route['gioi-thieu'] = 'introduce';
+$route['chi-nhanh'] = 'department';
 
 $route['lien-he'] = 'contact/index';
 $route['lien-he/(.*)$'] = 'contact/$1';

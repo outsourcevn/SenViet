@@ -204,3 +204,29 @@ if(!function_exists('genTrainingNavItem')){
         return $return;
     }
 }
+
+if(!function_exists('getDepartmentNavItem')){
+    function getDepartmentNavItem(){
+        $CI = &get_instance();
+
+        $introduceId = $CI->db->where('alias', 'chi-nhanh')->get('category_news')->row_object()->id;
+
+        $posts = $CI->db
+            ->where('publish', 1)
+            ->where('category_id', $introduceId)
+            ->order_by('order', 'ASC')
+            ->order_by('created_date', 'DESC')
+            ->get('news')
+            ->result_object();
+
+        $return = '<ul>';
+
+        foreach($posts as $_post){
+            $return .= '<li class="subItems"><a href="'.$_post->alias.'.html">'.$_post->title.'</a></li>';
+        }
+
+        $return .= '</ul>';
+
+        return $return;
+    }
+}

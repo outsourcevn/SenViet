@@ -79,12 +79,8 @@
                 <?php echo genTrainingNavItem();?>
             </li>
             <li class="nav_department">
-                <a href="#">Chi nhánh</a>
-                <ul>
-                    <li class="subItems"><a href="#">Chi nhánh miền Bắc</a></li>
-                    <li class="subItems"><a href="#">Chi nhánh miền Trung</a></li>
-                    <li class="subItems"><a href="#">Chi nhánh miền Nam</a></li>
-                </ul>
+                <a href="/chi-nhanh/">Chi nhánh</a>
+                <?php echo getDepartmentNavItem()?>
             </li>
             <li class="nav_npp">
                 <a href="#">Thông tin NPP</a>
