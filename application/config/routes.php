@@ -56,6 +56,8 @@ $route['dao-tao/(.*)$'] = 'training/index/$1';
 
 $route['gioi-thieu'] = 'introduce';
 $route['chi-nhanh'] = 'department';
+$route['thong-tin-npp'] = 'npp';
+$route['thong-tin-npp/(.*)$'] = 'npp';
 
 $route['lien-he'] = 'contact/index';
 $route['lien-he/(.*)$'] = 'contact/$1';

@@ -17,6 +17,8 @@ class News_detail extends CI_Controller{
         if(preg_match('/dao-tao/', $alias))
         {
             $data['active_nav'] = 'nav_training';
+        } else if(preg_match('/thong-tin-npp/', $alias)) {
+            $data['active_nav'] = 'nav_npp';
         }
 
         $rs = $this->db->where('alias', $alias)->where('publish', 1)->get('news');

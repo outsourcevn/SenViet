@@ -230,3 +230,29 @@ if(!function_exists('getDepartmentNavItem')){
         return $return;
     }
 }
+
+if(!function_exists('genNppNavItem')){
+    function genNppNavItem(){
+        $CI = &get_instance();
+
+        $newsId = $CI->db->where('alias', 'thong-tin-npp')->get('category_news')->row_object()->id;
+
+        $posts = $CI->db
+            ->where('publish', 1)
+            ->where('parentid', $newsId)
+            ->order_by('order', 'ASC')
+            ->order_by('id', 'ASC')
+            ->get('category_news')
+            ->result_object();
+
+        $return = '<ul>';
+
+        foreach($posts as $_post){
+            $return .= '<li class="subItems"><a href="'.$_post->alias.'">'.$_post->title.'</a></li>';
+        }
+
+        $return .= '</ul>';
+
+        return $return;
+    }
+}

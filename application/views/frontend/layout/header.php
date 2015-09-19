@@ -83,14 +83,8 @@
                 <?php echo getDepartmentNavItem()?>
             </li>
             <li class="nav_npp">
-                <a href="#">Thông tin NPP</a>
-                <ul>
-                    <li class="subItems"><a href="#">Lịch sự kiện NPP</a></li>
-                    <li class="subItems"><a href="#">Danh hiệu NPP</a></li>
-                    <li class="subItems"><a href="#">QL thành công chia</a></li>
-                    <li class="subItems"><a href="#">CLB Sen Việt</a></li>
-                    <li class="subItems"><a href="#">Hình ảnh</a></li>
-                </ul>
+                <a href="/thong-tin-npp/">Thông tin NPP</a>
+                <?php echo genNppNavItem();?>
             </li>
             <li class="nav_faq"><a href="#">Trợ giúp</a></li>
             <li class="nav_contact"><a href="/lien-he/">Liên hệ</a></li>
