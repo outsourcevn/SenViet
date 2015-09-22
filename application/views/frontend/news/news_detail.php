@@ -59,11 +59,11 @@
 
                 </article>
                 <div class="clearfix"></div>
-                <div class="social-links">
-                    <?php if($cur_news->fb_share_like == 1): ?>
+                <?php if($cur_news->fb_share_like == 1): ?>
+                    <div class="social-links">
                         <div class="fb-like" data-share="true"></div>
-                    <?php endif;?>
-                </div>
+                    </div>
+                <?php endif;?>
 
                 <?php if($cur_news->fb_comment == 1): ?>
                     <div class="fb-comments" data-href="<?php echo current_url();?>" data-width="100%" data-numposts="5"></div>

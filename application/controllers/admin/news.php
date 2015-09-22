@@ -155,7 +155,9 @@ class News extends CI_Controller {
                         'publish',
                         'is_featured',
                         'thumbnail',
-                        'category_id'
+                        'category_id',
+                        'fb_share_like',
+                        'fb_comment'
                     )
                 );
 
@@ -215,7 +217,9 @@ class News extends CI_Controller {
                         'publish',
                         'is_featured',
                         'thumbnail',
-                        'category_id'
+                        'category_id',
+                        'fb_share_like',
+                        'fb_comment'
                     )
                 );
 

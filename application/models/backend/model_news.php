@@ -18,6 +18,8 @@ Class Model_news extends CI_Model{
     public $userid_created     = 1;
     public $category_id        = 0;
     public $order              = 0;
+    public $fb_share_like      = 1;
+    public $fb_comment         = 1;
 
 
     /**
