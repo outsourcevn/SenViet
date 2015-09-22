@@ -48,8 +48,15 @@
                 </article>
                 <div class="clearfix"></div>
                 <div class="social-links">
-                    <div class="fb-like" data-share="true"></div>
+                    <?php if($cur_news->fb_share_like == 1): ?>
+                        <div class="fb-like" data-share="true"></div>
+                    <?php endif;?>
                 </div>
+
+                <?php if($cur_news->fb_comment == 1): ?>
+                    <div class="fb-comments" data-href="<?php echo current_url();?>" data-width="100%" data-numposts="5"></div>
+                <?php endif;?>
+
                 <?php if(isset($relatedNews) && count($relatedNews) > 0) : ?>
                 <div class="related-news">
                     <h3 class="related-news-heading">Tin tức liên quan</h3>
