@@ -465,3 +465,40 @@ button.contact-message-send:focus{
 .main-content-container .related-news ul li, .main-content-container .related-news ul li a{
     color: #636363;
 }
+
+.main-content-container ul.faq-list{
+    padding:20px 10px;
+}
+
+.main-content-container ul.faq-list li div.faq-question, .main-content-container ul.faq-list li div.faq-answer{
+    border-bottom: 1px dashed #969696;
+    line-height: 48px;
+}
+
+.main-content-container ul.faq-list li div.faq-question span.glyphicon{
+    border-radius: 50%;
+    background: #ccc;
+    padding:5px;
+}
+
+.main-content-container ul.faq-list li div.faq-answer{
+    display: none;
+}
+
+.main-content-container ul.faq-list li.active{
+    background: #f3f4f4;
+}
+
+.main-content-container ul.faq-list div.faq-question span.icon-question, .main-content-container ul.faq-list div.faq-answer span.icon-answer{
+    display: block;
+    background: url("../images/icon-hoi.png") no-repeat;
+    height: 36px;
+    width: 38px;
+    float:left;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.main-content-container ul.faq-list div.faq-answer span.icon-answer{
+    background: url("../images/icon-dap.png") no-repeat;
+}

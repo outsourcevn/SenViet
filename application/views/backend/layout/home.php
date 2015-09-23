@@ -92,6 +92,13 @@
                     <a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/images">Images<span class="sub_icon glyphicon glyphicon-camera"></span></a>
                 </li>
 
+                <li>
+                    <a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/faq">Trợ giúp<span class="sub_icon glyphicon glyphicon-question-sign"></span></a>
+                    <ul>
+                        <li><a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/faq/">CH thường gặp</a></li>
+                    </ul>
+                </li>
+
                 <li><a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/contacts">Liên hệ<span class="sub_icon glyphicon glyphicon-envelope"></span></a></li>
             </ul>
         </div>

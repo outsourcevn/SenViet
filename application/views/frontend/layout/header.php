@@ -19,7 +19,7 @@
                 <li class="nav_training"><a href="/dao-tao/">Đào Tạo</a></li>
                 <li class="nav_department"><a href="#">Chi nhánh</a></li>
                 <li class="nav_npp"><a href="#">Thông tin NPP</a></li>
-                <li class="nav_faq"><a href="#">Trợ giúp</a></li>
+                <li class="nav_faq"><a href="/tro-giup/">Trợ giúp</a></li>
                 <li class="nav_contact"><a href="/lien-he/">Liên hệ</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -86,7 +86,14 @@
                 <a href="/thong-tin-npp/">Thông tin NPP</a>
                 <?php echo genNppNavItem();?>
             </li>
-            <li class="nav_faq"><a href="#">Trợ giúp</a></li>
+            <li class="nav_faq">
+                <a href="/tro-giup/">Trợ giúp</a>
+                <ul>
+                    <li class="subItems"><a href="/tro-giup/hoi-dap-thuong-gap">Hỏi - đáp thường gặp</a></li>
+                    <li class="subItems"><a href="/tro-giup/huong-dan-dang-ky/">Hướng dẫn đăng ký</a></li>
+                    <li class="subItems"><a href="/tro-giup/quy-trinh-bieu-mau/">Quy trình - biểu mẫu</a></li>
+                </ul>
+            </li>
             <li class="nav_contact"><a href="/lien-he/">Liên hệ</a></li>
         </ul>
 

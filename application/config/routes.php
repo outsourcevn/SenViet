@@ -59,6 +59,9 @@ $route['chi-nhanh'] = 'department';
 $route['thong-tin-npp'] = 'npp';
 $route['thong-tin-npp/(.*)$'] = 'npp';
 
+$route['tro-giup/hoi-dap-thuong-gap'] = 'faq/index';
+$route['tro-giup'] = 'faq/index';
+
 $route['lien-he'] = 'contact/index';
 $route['lien-he/(.*)$'] = 'contact/$1';
 

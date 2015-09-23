@@ -81,7 +81,7 @@ header .login-dialog
     color: #fff;
 }
 
-nav{
+nav.fixedContent{
     background: linear-gradient(to bottom, #74c713, #3aa004);
 }
 
@@ -122,7 +122,7 @@ nav #search-box input[name="keyword"]{
     padding-right: 35px;
     border-radius: 7px;
     border: none;
-    background: url(../images/search-icon.png) no-repeat 95px center #9ece0d;    
+    background: url(../images/search-icon.png) no-repeat 95px center #9ece0d;
 }
 
 nav .main-nav li{
@@ -381,6 +381,7 @@ button.contact-message-send:focus{
     background: #4db750;
     font-size: 16px;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 .panel-left .panel-left-body ul li{
@@ -410,6 +411,11 @@ button.contact-message-send:focus{
     margin: 0px;
 }
 
+.main-content-container article.post-item a:first-child{
+    min-height: 3em;
+    display: block;
+}
+
 .main-content-container .main-content{
     padding: 0px;
     width: 100%;
@@ -418,6 +424,7 @@ button.contact-message-send:focus{
 .main-content .post-item .col-md-12.row.text-justify{
     border-bottom: 1px dashed #333;
     padding-bottom: 15px;
+    min-height: 190px;
 }
 
 .main-content .post-item a{
@@ -436,6 +443,48 @@ button.contact-message-send:focus{
     margin-right: 5px;
 }
 
-.main-content .post-item .post-date{
+.main-content .post-date{
     color: #959595;
+}
+
+.main-content-container .social-links{
+    border-top: 1px dashed #969696;
+    border-bottom: 1px dashed #969696;
+
+    margin:10px 0px;
+    padding: 5px 0px;
+
+}
+
+.main-content-container .related-news h3.related-news-heading{
+    color: #39b54a;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.main-content-container .related-news ul li, .main-content-container .related-news ul li a{
+    color: #636363;
+}
+
+.main-content-container ul.faq-list{
+    padding:20px 10px;
+}
+
+.main-content-container ul.faq-list li div.faq-question, .main-content-container ul.faq-list li div.faq-answer{
+    border-bottom: 1px dashed #969696;
+    line-height: 48px;
+}
+
+.main-content-container ul.faq-list li div.faq-question span.glyphicon{
+    border-radius: 50%;
+    background: #ccc;
+    padding:5px;
+}
+
+.main-content-container ul.faq-list li div.faq-answer{
+    display: none;
+}
+
+.main-content-container ul.faq-list li.active{
+    background: #f3f4f4;
 }
