@@ -18,18 +18,37 @@ class Products extends CI_Controller{
         $data['configuration'] = $this->configs;
         $data['active_nav'] = 'nav_product';
 
-
         if($alias == ''){
             $category = $this->db
                 ->where('id', 1)
-                ->where('publish', 1)
                 ->get('category')
                 ->row_object();
             $categoryId = 1;
             $data['seo']['title'] = 'Sản phẩm';
 
-            $data['product-list'] = $this->db
+            //Pagination
+            $config = $this->mypagination->get_config();
+            $config['base_url']     = '/san-pham/?show';
+            $config['first_url']    = '/san-pham/?show';
+            $config['total_rows'] = $this->db
                 ->where('publish', 1)
+                ->order_by('created_date', 'DESC')
+                //->limit($perpage, $page)
+                ->get('products')
+                ->num_rows();
+
+            $page                   = $this->input->get('per_page');
+            $page                   = ($page < 0) ? $page = 0 : $page;
+            $page                   = ($page >= $config['total_rows']) ? 0 : $page;
+            $config['cur_page']     = $page;
+            $config['per_page'] = $data['configuration']->perpage;
+            $config['page_query_string'] = TRUE;
+            $this->pagination->initialize($config);
+
+            $data['product_list'] = $this->db
+                ->where('publish', 1)
+                ->order_by('created_date', 'DESC')
+                ->limit($config['per_page'], $page)
                 ->get('products')
                 ->result_object();
 
@@ -46,11 +65,43 @@ class Products extends CI_Controller{
                 $data['seo']['description'] = $category->description;
                 $data['seo']['keywords'] = $category->meta_keywords;
 
-                $data['product-list'] = $this->db
+                $data['product_list'] = $this->db->select('*')
                     ->where('category_id', $categoryId)
                     ->where('publish', 1)
                     ->get('products')
                     ->result_object();
+
+                $config = $this->mypagination->get_config();
+                $config['base_url']     = '/san-pham/'.$alias.'?show';
+                $config['first_url']    = '/san-pham/'.$alias.'?show';
+                $config['total_rows'] = $this->db
+                    ->from('products')
+                    ->join('product_cate', 'products.id = product_cate.product_id', 'left')
+                    ->where('publish', 1)
+                    ->where('product_cate.category_id', $category->id)
+                    ->group_by('products.id')
+                    ->order_by('created_date', 'DESC')
+                    ->get()->num_rows();
+
+                $page                   = $this->input->get('per_page');
+                $page                   = ($page < 0) ? $page = 0 : $page;
+                $page                   = ($page >= $config['total_rows']) ? 0 : $page;
+                $config['cur_page']     = $page;
+                $config['per_page'] = $data['configuration']->perpage;
+                $config['page_query_string'] = TRUE;
+                $this->pagination->initialize($config);
+
+                $data['product_list'] = $this->db
+                    ->from('products')
+                    ->join('product_cate', 'products.id = product_cate.product_id', 'left')
+                    ->where('publish', 1)
+                    ->where('product_cate.category_id', $category->id)
+                    ->group_by('products.id')
+                    ->order_by('created_date', 'DESC')
+                    ->limit($config['per_page'], $page)
+                    ->get()
+                    ->result_object();
+
             } else {
                 redirect('/');
             }
@@ -58,8 +109,9 @@ class Products extends CI_Controller{
 
         //View
         $data['breadcrumb'] = $this->db->where('lft <=', $category->lft)->where('rgt >=', $category->rgt)->get('category')->result_object();
-
-
+        $data['category_list']      = $this->db->where('publish', 1)->order_by('lft', 'ASC')->get('category')->result_object();
+        $data['cur_category']       = $category;
+        $data['pagination'] = $this->pagination->create_links();
         $data['tpl']                = 'frontend/products/category';
         if($this->configs->is_active){
             $this->load->view('frontend/layout/1-column', $data);

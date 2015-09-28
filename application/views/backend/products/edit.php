@@ -72,6 +72,13 @@
                             <textarea name="description" class="form-control" id="description"><?php echo (isset($post_data['description']) ? $post_data['description'] : '')?></textarea>
                         </div>
                     </div>
+
+                    <div class="col-md-12 item">
+                        <div class="col-md-3" style="line-height: 200%;"><label for="content">Chi tiết sản phẩm</label><span class="text-warnign"><sup>(*)</sup></span></div>
+                        <div class="col-md-9">
+                            <textarea name="content" class="form-control" required="" id="content"><?php echo (isset($post_data['content']) ? $post_data['content'] : '')?></textarea>
+                        </div>
+                    </div>
                 </div>
                 
                 <div id="categories" class="hidden tabs-item">
@@ -183,7 +190,9 @@
     else
     {
     	var editor = CKEDITOR.replace( 'description' );
-    	CKFinder.setupCKEditor( editor, '<?php echo CMS_DOMAIN?>/library/ckfinder/' );    
+    	CKFinder.setupCKEditor( editor, '<?php echo CMS_DOMAIN?>/library/ckfinder/' );
+        var editor2 = CKEDITOR.replace( 'content' );
+        CKFinder.setupCKEditor( editor2, '<?php echo CMS_DOMAIN?>/library/ckfinder/' );
     }
     
     </script>

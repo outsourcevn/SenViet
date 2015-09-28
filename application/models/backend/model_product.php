@@ -7,6 +7,7 @@ Class Model_product extends CI_Model
     //var $id;
     var $title = '';
     var $description = '';
+    var $content = '';
     var $alias = '';
     var $brand_id = 0;
     var $meta_description = '';

@@ -16,13 +16,17 @@
         </div>
         <div class="col-lg-12">
             <div class="col-lg-3 row">
-                <?php if(isset($list_left_category) && is_array($list_left_category) && count($list_left_category) > 0) :?>
+                <?php if(isset($category_list) && is_array($category_list) && count($category_list) > 0) :?>
                     <div class="panel-left">
-                        <div class="left-panel-heading">Tin Tức Khác</div>
+                        <div class="left-panel-heading">Sản phẩm khác</div>
                         <div class="panel-left-body">
                             <ul class="left-panel-contain">
-                                <?php foreach($list_left_category as $_category):?>
-                                    <li class="<?php echo ($cur_category->id === $_category->id) ? 'active' : ''?>"><a href="<?php echo $_category->alias?>"><?php echo $_category->title?></a></li>
+                                <?php foreach($category_list as $_category):?>
+                                    <?php if($_category->title == 'HOME'):?>
+                                        <li class="<?php echo ($cur_category->id == $_category->id) ? 'active' : ''?>"><a href="/san-pham/">Tất cả sản phẩm</a></li>
+                                        <?php else:?>
+                                    <li class="<?php echo ($cur_category->id == $_category->id) ? 'active' : ''?>"><a href="/san-pham/<?php echo $_category->alias?>"><?php echo $_category->title?></a></li>
+                                        <?php endif;?>
                                 <?php endforeach;?>
                             </ul>
                         </div>
@@ -34,40 +38,49 @@
                         <div class="panel-left-body">
                             <ul class="left-panel-contain">
                                 <?php foreach($featuredProducts as $_product):?>
-                                    <li><a href="<?php echo "/san-pham/".$_product->alias?>.html"><?php echo $_product->title?></a></li>
+                                    <li><a href="/san-pham/<?php echo $_product->alias?>.html"><?php echo $_product->title?></a></li>
                                 <?php endforeach;?>
                             </ul>
                         </div>
                     </div>
                 <?php endif;?>
             </div>
+
             <div class="col-lg-9 main-content-container">
-                <h3 class="news-container-heading"><?php echo (isset($cur_category->title)) ? $cur_category->title : '-';?></h3>
-                <div class="main-content col-md-12">
-                    <?php if(isset($list_post) && is_array($list_post) && count($list_post) > 0) :
-                        foreach($list_post as $_postitem):
+                <h3 class="news-container-heading"><?php echo ($cur_category->title == 'HOME') ? 'Trang chủ' : $cur_category->title;?></h3>
+                <div class="main-product-content col-md-12 row">
+                    <?php if(isset($product_list) && count($product_list) > 0): ?>
+                        <?php foreach($product_list as $_product):
+                            $images = getThumbnailByProductId($_product->id);
                             ?>
-                            <article class="col-md-6 post-item item">
-                                <a href="<?php echo $_postitem->alias;?>.html" class="post-title"><h3><?php echo $_postitem->title;?></h3></a>
+                    <div class="col-md-4 text-center item">
+                        <a href="/san-pham/<?php echo $_product->alias;?>.html"><img src="<?php echo (isset($images->image_link)) ? $images->image_link : 'images/product/no-image.svg';?>" class="product-thumbnail" alt="<?php echo (isset($images->title) ? $images->title : '');?>" /></a>
 
-                                <div class="col-md-12 row text-justify">
-                                    <img class="pull-left" src="<?php echo $_postitem->thumbnail;?>" alt="<?php echo $_postitem->title;?>"/>
-                                    <div class="post-date">
-                                        <span class="glyphicon glyphicon-calendar"></span> <?php echo gmdate('H:i', strtotime($_postitem->created_date));?> | <?php echo gmdate('d/m/Y', strtotime($_postitem->created_date));?>
-                                    </div>
-
-                                    <?php echo html_entity_decode($_postitem->description)?>
-                                    <a class="post-detail-link" href="<?php echo $_postitem->alias;?>.html">Xem tiêp</a>
-                                </div>
-                                <div class="clearfix"></div>
-                            </article>
-                        <?php endforeach; else:?>
-                        <p class="text-center">Hiện tại chưa có bài đăng nào trong mục này</p>
+                        <a href="/san-pham/<?php echo $_product->alias;?>.html" class="product-link"><button class="product-name"><?php echo $_product->title;?></button></a>
+                    </div>
+                        <?php endforeach;?>
+                    <?php else:?>
+                    <div class="col-md-12 text-center">
+                        Hiện tại không có sản phẩm nào trong mục này.
+                    </div>
                     <?php endif;?>
                 </div>
-
-                <div class="col-lg-12 text-center"><?php echo $pagination;?></div>
+                <div class="col-md-12 text-center"><?php echo (isset($pagination))? $pagination : ''?></div>
             </div>
+            <script>
+                //Fixed Height
+                jQuery(document).ready(function(){
+                    var productImageList = jQuery('.main-product-content .item img.product-thumbnail');
+                    var maxHeight = 0;
+                    jQuery(productImageList).each(function(){
+                        if(jQuery(this).height() > maxHeight){
+                            maxHeight = jQuery(this).height();
+                        }
+                    });
+                    jQuery(productImageList).height(maxHeight);
+
+                });
+            </script>
         </div>
     </div>
 </div>

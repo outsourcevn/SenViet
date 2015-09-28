@@ -256,3 +256,11 @@ if(!function_exists('genNppNavItem')){
         return $return;
     }
 }
+
+if(!function_exists('getThumbnailByProductId')){
+    function getThumbnailByProductId($productId = 0){
+        $CI = &get_instance();
+
+        return $CI->db->where('FK_id', $productId)->where('main_image', 1)->get('images')->row_object();
+    }
+}

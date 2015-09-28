@@ -66,6 +66,7 @@ class Contacts extends CI_Controller{
         $config['total_rows'] = $this->Mcontact->CountRow($keyword, $param);
         $config['cur_page'] = ($page >= 0) ? $page : 0;
         $perpage = CMS_ITEM_PER_PAGE;
+        $config['per_page'] = $perpage;
         $config['suffix'] = '?'.$_SERVER['QUERY_STRING'];
         $this->pagination->initialize($config);
 

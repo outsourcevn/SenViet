@@ -49,6 +49,8 @@ Class Mycommonlib {
     
     public function vn2latin($cs, $tolower = false)
     {
+        str_replace(':', '', $$cs);
+
         /*Mảng chứa tất cả ký tự có dấu trong Tiếng Việt*/
         $marTViet=array("à","á","ạ","ả","ã","â","ầ","ấ","ậ","ẩ","ẫ","ă",
         "ằ","ắ","ặ","ẳ","ẵ","è","é","ẹ","ẻ","ẽ","ê","ề",
@@ -90,7 +92,7 @@ Class Mycommonlib {
         if ($tolower) {
             return strtolower(str_replace($marTViet,$marKoDau,$cs));
         }
-         
+
         return str_replace($marTViet,$marKoDau,$cs);
     }
 }

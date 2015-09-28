@@ -156,7 +156,7 @@ class Products extends CI_Controller {
             
             
     		if($this->form_validation->run() == TRUE){
-                $data['post_data'] = $this->mycommonlib->Filter_Field($data['post_data'], array('title', 'alias', 'image', 'parentid', 'description', 'meta_keyword', 'meta_description', 'meta_title', 'price', 'sale_price', 'brand_id', 'publish', 'is_featured'));
+                $data['post_data'] = $this->mycommonlib->Filter_Field($data['post_data'], array('title', 'alias', 'image', 'content', 'parentid', 'description', 'meta_keyword', 'meta_description', 'meta_title', 'price', 'sale_price', 'brand_id', 'publish', 'is_featured'));
                 
                 $this->Mproduct->InsertNewItem($data['post_data'], $this->auth['id']);
                 
@@ -215,7 +215,7 @@ class Products extends CI_Controller {
             $this->form_validation->set_message('is_natural_no_zero', '%s phải được nhập đúng định dạng.');
             
             if($this->form_validation->run() == TRUE){
-                $data['post_data'] = $this->mycommonlib->Filter_Field($data['post_data'], array('title', 'alias', 'image', 'parentid', 'description', 'meta_keyword', 'meta_description', 'meta_title', 'price', 'sale_price', 'brand_id', 'publish', 'is_featured'));
+                $data['post_data'] = $this->mycommonlib->Filter_Field($data['post_data'], array('title', 'alias', 'image','content', 'parentid', 'description', 'meta_keyword', 'meta_description', 'meta_title', 'price', 'sale_price', 'brand_id', 'publish', 'is_featured'));
                 $this->Mproduct->ModifyRow($data['post_data'], $id);
                 
                 //GET FURTHER ITEMS
