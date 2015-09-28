@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Công ty cổ phần ĐT SX &amp; TM Sen Việt Group</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="Free Web tutorials">
+    <meta name="author" content="minhducck">
+
+    <!--Jquer-->
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
+    <script type="text/javascript" src="js/fixedScroll.js"></script>
+    <!--/Jquer-->
+
+    <!--Bootstrap-->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <!--/Bootstrap-->
+
+    <!--Custom Css-->
+    <link rel="stylesheet" href="css/style_new.css" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+    <!--/Custom Css-->
+
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+            jQuery('.fixedContent').fixedScroll();
+
+            jQuery('#product-slider').carouFredSel({
+                responsive: true,
+                width: '100%',
+                scroll: 2,
+                prev : '#prev',
+                next : '#next',
+                items: {
+                    width: 200,
+                    //	height: '30%',	//	optionally resize item-height
+                    visible: {
+                        min: 2,
+                        max: 6
+                    }
+                }
+            });
+
+            jQuery('nav .main-nav li li').hover(
+                    function(){
+                        var parentNode = jQuery(this).parent().parent();
+
+                        jQuery(parentNode).css({'background-color': '#9ece0d'});
+                        jQuery(parentNode).children('a').css('color', '#0c6902');
+                    },
+                    function(){
+                        var parentNode = jQuery(this).parent().parent();
+
+                        jQuery(parentNode).removeAttr('style');
+                        jQuery(parentNode).children('a').removeAttr('style');
+                    });
+        });
+    </script>
+</head>
+<body>
+<!--Navigation For mobile-->
+<nav class="navbar navbar-default navbar-static-top hidden-lg">
+    <div class="container">
+        <div class="navbar-header">
+            <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="HomePage.html" class="navbar-brand">Sen Việt Group</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Đào Tạo</a></li>
+                <li><a href="#">Chi nhánh</a></li>
+                <li><a href="#">Thông tin NPP</a></li>
+                <li><a href="#">Trợ giúp</a></li>
+                <li><a href="#" class="active">Liên hệ</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://login.senvietgroup.vn/">Login</a></li>
+                <li><a href="http://senvietgroup.vn/">Register</a></li>
+                <li>
+                    <div id="search-mobile" class="text-center">
+                        <form name="nav-search" method="GET" action="./">
+                            <input name="keyword" type="text" placeholder="Tìm kiếm..." />
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+<!--Navigation For mobile-->
+<header>
+    <div class="container">
+        <!--Banner-->
+        <div class="main-banner pull-left col-lg-11">
+            <a href="HomePage.html" title="Công ty cổ phần ĐT SX &amp; TM Sen Việt Group"><img src="images/banner.png" alt="Công ty cổ phần ĐT SX &amp; TM Sen Việt Group"/></a>
+        </div>
+        <!--/Banner-->
+
+        <!--Login Area-->
+        <div class="login-dialog pull-right hidden-sm hidden-xs col-lg-1">
+            <button class="btn btn-success" type="button" name="login-btn" onclick="location.href='http://login.senvietgroup.vn'">Login</button>
+        </div>
+        <!--/Login Area-->
+        <div class="clearfix"></div>
+    </div>
+</header>
+
+<nav class="fixedContent">
+    <div class="container">
+        <ul class="pull-left main-nav">
+            <li><a href="#">Trang chủ</a></li>
+            <li>
+                <a href="#">Giới thiệu</a>
+                <ul>
+                    <li class="subItems"><a href="#">Thư ngỏ</a></li>
+                    <li class="subItems"><a href="#">Ban lãnh đạo</a></li>
+                    <li class="subItems"><a href="#">Tầm nhìn - sứ mệnh</a></li>
+                    <li class="subItems"><a href="#">Văn hóa doanh nghiệp</a></li>
+                    <li class="subItems"><a href="#">Giải thưởng - chứng nhận</a></li>
+                    <li class="subItems"><a href="#">Góc báo chí</a></li>
+                </ul>
+            </li>
+            <li class="active">
+                <a href="#">Tin tức</a>
+                <ul>
+                    <li class="subItems"><a href="#">Thông báo</a></li>
+                    <li class="subItems"><a href="#">Sự kiện nội bộ</a></li>
+                    <li class="subItems"><a href="#">Hoạt động xã hội</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Sản phẩm</a>
+                <ul>
+                    <li class="subItems"><a href="#">Sản phẩm chức năng</a></li>
+                    <li class="subItems"><a href="#">Mỹ phẩm</a></li>
+                    <li class="subItems"><a href="#">Hàng tiêu dùng</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Đào Tạo</a>
+                <ul>
+                    <li class="subItems"><a href="#">Lịch làm việc</a></li>
+                    <li class="subItems"><a href="#">Chính sách công ty</a></li>
+                    <li class="subItems"><a href="#">Văn bản - pháp lý</a></li>
+                    <li class="subItems"><a href="#">Kiến thức - Sản phẩm</a></li>
+                    <li class="subItems"><a href="#">Đào tạo - Nâng cao</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Chi nhánh</a>
+                <ul>
+                    <li class="subItems"><a href="#">Chi nhánh miền Bắc</a></li>
+                    <li class="subItems"><a href="#">Chi nhánh miền Trung</a></li>
+                    <li class="subItems"><a href="#">Chi nhánh miền Nam</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Thông tin NPP</a>
+                <ul>
+                    <li class="subItems"><a href="#">Lịch sự kiện NPP</a></li>
+                    <li class="subItems"><a href="#">Danh hiệu NPP</a></li>
+                    <li class="subItems"><a href="#">QL thành công chia</a></li>
+                    <li class="subItems"><a href="#">CLB Sen Việt</a></li>
+                    <li class="subItems"><a href="#">Hình ảnh</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Trợ giúp</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+
+        <div id="search-box" class="pull-right">
+            <form name="nav-search" method="GET" action="./">
+                <input name="keyword" type="text" placeholder="Tìm kiếm..." />
+            </form>
+        </div>
+        <div class="clearfix" style="clear: both;"></div>
+    </div>
+</nav>
+
+<div class="content">
+    <div class="container">
+        <div class="col-lg-12">
+            <div class="col-lg-3 row"></div>
+            <div class="col-lg-9 row">
+                <ol class="breadcrumb">
+                    <li><a href="<?php echo base_url();?>"><i>Trang chủ</i></a></li>
+                    <li><a href="#"><i>Sản phẩm</i></a></li>
+                    <li class="active"><i>Sản phẩm chức năng</i></li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="col-lg-3 row">
+                <div class="panel-left">
+                    <div class="left-panel-heading">Sản Phẩm Khác</div>
+                    <div class="panel-left-body">
+                        <ul class="left-panel-contain">
+                            <li class="active"><a href="#">Thực phẩm chức năng</a></li>
+                            <li><a href="#">Mỹ phẩm</a></li>
+                            <li><a href="#">Hàng tiêu dùng</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="panel-left">
+                    <div class="left-panel-heading">Sản phẩm bán chạy</div>
+                    <div class="panel-left-body">
+                        <ul class="left-panel-contain">
+                            <li class="active"><a href="#">Thực phẩm chức năng</a></li>
+                            <li><a href="#">Mỹ phẩm</a></li>
+                            <li><a href="#">Hàng tiêu dùng</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 main-content-container">
+                <h3 class="news-container-heading">Sản phẩm chức năng</h3>
+                <div class="main-product-content col-md-12 row">
+                    <div class="col-md-4 text-center item">
+                        <a href="#"><img src="images/product/san pham -chi tiet 1.png" class="product-thumbnail" alt="Sản phẩm 1" /></a>
+                        
+                        <a href="#" class="product-link"><button class="product-name">Viên bổ sung dinh dưỡng Forever Immublend</button></a>
+                    </div>
+                    
+                    <div class="col-md-4 text-center item">
+                        <a href="#"><img src="images/product/san pham -chi tiet 2.png" class="product-thumbnail" alt="Sản phẩm 2" /></a>
+                        
+                        <a href="#" class="product-link"><button class="product-name">Viên bổ sung dinh dưỡng Forever Immublend</button></a>
+                    </div>
+                    
+                    <div class="col-md-4 text-center item">
+                        <a href="#"><img src="images/product/san pham -chi tiet 3.png" class="product-thumbnail" alt="Sản phẩm 3" /></a>
+                        
+                        <a href="#" class="product-link"><button class="product-name">Viên bổ sung dinh dưỡng Forever Immublend</button></a>
+                    </div>
+                    
+                    <div class="col-md-4 text-center item">
+                        <a href="#"><img src="images/product/san pham -chi tiet 1.png" class="product-thumbnail" alt="Sản phẩm 1" /></a>
+                        
+                        <a href="#" class="product-link"><button class="product-name">Viên bổ sung dinh dưỡng Forever Immublend</button></a>
+                    </div>
+                    
+                    <div class="col-md-4 text-center item">
+                        <a href="#"><img src="images/product/san pham -chi tiet 2.png" class="product-thumbnail" alt="Sản phẩm 2" /></a>
+                        
+                        <a href="#" class="product-link"><button class="product-name">Viên bổ sung dinh dưỡng Forever Immublend</button></a>
+                    </div>
+                    
+                    <div class="col-md-4 text-center item">
+                        <a href="#"><img src="images/product/san pham -chi tiet 3.png" class="product-thumbnail" alt="Sản phẩm 3" /></a>
+                        
+                        <a href="#" class="product-link"><button class="product-name">Viên bổ sung dinh dưỡng Forever Immublend</button></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Footer-->
+<footer>
+    <div class="container">
+        <ul class="footer-links">
+            <li><span class="footer-heading">CÔNG TY CỔ PHẦN ĐT SX &amp; TM SEN VIỆT</span></li>
+            <li><i class="fa fa-home"></i> Số 7/15 Phương Mai - Đống Đa - Hà Nội</li>
+            <li><i class="fa fa-mobile"></i> 0914 859 999</li>
+            <li><i class="fa fa-envelope"></i> senvietgroup@gmail.com</li>
+        </ul>
+
+        <ul class="footer-links">
+            <li><span class="footer-heading">Trang chủ • liên hệ • trợ giúp • quy định sử dụng • sơ đồ site</span></li>
+            <li>© Copyright Sen Viet Group 2015</li>
+            <li>Design by Solution </li>
+        </ul>
+
+        <ul class="footer-links social-links">
+            <li><a href="#FACEBOOK"><img src="images/twitter.png" alt="Twitter" /></a></li>
+            <li><a href="#FACEBOOK"><img src="images/facebook.png" alt="Facebook" /></a></li>
+            <li><a href="#FACEBOOK"><img src="images/gplus.png" alt="Google Plus" /></a></li>
+            <li><a href="#FACEBOOK"><img src="images/pinterest.png" alt="Pinterest" /></a></li>
+        </ul>
+
+        <div class="banking">
+            <img src="images/banks.png" alt="banks" />
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</footer>
+</body>
+</html>
