@@ -13,6 +13,9 @@ ul {
 }
 
 @media only screen and (max-width : 1200px) {
+    nav.navbar.navbar-default.navbar-static-top.hidden-lg{
+        background: linear-gradient(to bottom, #74c713, #3aa004);
+    }
     header .container .main-banner {
         text-align: center;
     }

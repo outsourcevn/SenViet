@@ -122,7 +122,7 @@ class Category extends CI_Controller {
             $this->form_validation->set_message('numeric', '%s nhập sai dữ liệu');
             
     		if($this->form_validation->run() == TRUE){
-                $data['post_data'] = $this->mycommonlib->Filter_Field($data['post_data'], array('title', 'alias', 'image', 'parentid', 'description', 'meta_keyword', 'meta_description'));
+                $data['post_data'] = $this->mycommonlib->Filter_Field($data['post_data'], array('title', 'alias', 'image', 'parentid', 'description', 'meta_keywords', 'meta_description'));
                 
                 if($data['post_data']['alias'] == ''){
                     $data['post_data']['alias'] = $this->ajax_alias($data['post_data']['title']);
@@ -157,7 +157,7 @@ class Category extends CI_Controller {
             $this->form_validation->set_message('numeric', '%s nhập sai dữ liệu');
             
     		if($this->form_validation->run() == TRUE){
-                $data['post_data'] = $this->mycommonlib->Filter_Field($data['post_data'], array('title', 'alias', 'image', 'parentid', 'description', 'meta_keyword', 'meta_description'));
+                $data['post_data'] = $this->mycommonlib->Filter_Field($data['post_data'], array('title', 'alias', 'image', 'parentid', 'description', 'meta_keywords', 'meta_description'));
                 if($data['post_data']['alias'] == ''){
                     $data['post_data']['alias'] = $this->ajax_alias($data['post_data']['title']);
                 }

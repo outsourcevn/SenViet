@@ -43,6 +43,7 @@ $route['404_override'] = '';
 
 $route['san-pham'] = 'products';
 $route['san-pham/(.*).html$'] = 'products/detail/$1';
+$route['san-pham/(.*)'] = 'products/index/$1';
 
 $route['gioi-thieu/(.*).html$'] = 'introduce/detail/$1';
 $route['chi-nhanh/(.*).html'] = 'department/detail/$1';

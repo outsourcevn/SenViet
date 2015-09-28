@@ -84,9 +84,9 @@
             </div>
             
             <div class="col-md-12 item">
-                <div class="col-md-3" style="line-height: 200%;"><label for="meta_keyword">Meta Keyword</label></div>
+                <div class="col-md-3" style="line-height: 200%;"><label for="meta_keywords">Meta Keyword</label></div>
                 <div class="col-md-9">
-                    <textarea name="meta_keyword" id="meta_keyword" class="textarea form-control"><?php echo (isset($post_data['meta_keyword']) ? $post_data['meta_keyword'] : '')?></textarea>
+                    <textarea name="meta_keywords" id="meta_keywords" class="textarea form-control"><?php echo (isset($post_data['meta_keywords']) ? $post_data['meta_keywords'] : '')?></textarea>
                 </div>
             </div>
             

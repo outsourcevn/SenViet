@@ -67,11 +67,11 @@
                 <?php echo genNewsNavItem();?>
             </li>
             <li class="nav_product">
-                <a href="#">Sản phẩm</a>
+                <a href="/san-pham/">Sản phẩm</a>
                 <ul>
-                    <li class="subItems"><a href="#">Sản phẩm chức năng</a></li>
-                    <li class="subItems"><a href="#">Mỹ phẩm</a></li>
-                    <li class="subItems"><a href="#">Hàng tiêu dùng</a></li>
+                    <li class="subItems"><a href="/san-pham/san-pham-chuc-nang/">Sản phẩm chức năng</a></li>
+                    <li class="subItems"><a href="/san-pham/my-pham">Mỹ phẩm</a></li>
+                    <li class="subItems"><a href="/san-pham/hang-tieu-dung/">Hàng tiêu dùng</a></li>
                 </ul>
             </li>
             <li class="nav_training">
