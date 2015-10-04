@@ -76,7 +76,7 @@ if(!function_exists('get_username_by_id')){
 		if($user = $CI->Muser->SelectByID($id)){
 			return $user->username;
 		}else{
-			return '-';
+			return null;
 		}
 	}
 }

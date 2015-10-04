@@ -59,8 +59,8 @@
                             ?>
                             <div id="caroufredsel-24" class="dev7-caroufredsel-carousel">
                                 <?php foreach($images as $_image): ?>
-                                <div class="dev7-caroufredsel-image"><img
-                                        src="<?php echo $_image->image_link?>" alt="<?php echo $_image->title?>"/>
+                                <div class="dev7-caroufredsel-image" style="text-align: center"><img
+                                        src="<?php echo $_image->image_link?>" alt="<?php echo $_image->title?>" style="max-height: 230px; max-width: 100%;"/>
                                 </div>
                                 <?php endforeach;?>
                             </div>
@@ -102,7 +102,8 @@
                         <h3 class="news-container-heading"><?php echo $cur_product->title;?></h3>
 
                         <br/>
-                        <div class="col-sm-6"><strong>Giá bán lẻ:</strong></div><div class="col-sm-6"><span><?php echo number_format($cur_product->price);?> VNĐ</span></div>
+                        <div class="col-sm-6"><strong>Người gửi:</strong></div><div class="col-sm-6"><span><?php $user = get_username_by_id($cur_product->userid_created); echo ($user != '') ? $user : '-';?></span></div>
+                        <div class="col-sm-6"><strong>Giá bán lẻ:</strong></div><div class="col-sm-6"><span><?php echo ($cur_product->price && $cur_product->show_price == 1) ? number_format($cur_product->price).' VNĐ' : 'Liên hệ';?></span></div>
                         <div class="col-sm-6"><strong>Mã số sản phẩm:</strong></div><div class="col-sm-6"><span>#<?php echo $cur_product->id;?></span></div>
 
                         <div class="col-sm-12 product-short-description">
@@ -122,66 +123,41 @@
                         <?php echo html_entity_decode($cur_product->content);?>
                     </div>
                 </div>
-
+                <?php
+                    if(isset($featured_products) && count($featured_products) >= 4):
+                ?>
                 <div class="col-sm-12">
                     <h3 class="news-container-heading product-related">SẢN PHẨM LIÊN QUAN</h3>
                     <div class="product-slider">
-                        <span id="prev"><i class="fa fa-chevron-circle-left"></i></span>
-                        <span id="next"><i class="fa fa-chevron-circle-right"></i></span>
-                        <ul id="product-slider">
-                            <li class="item">
-                                <img src="images/product/1.jpg" alt="TÊN SẢN PHẨM" />
-                                <a class="overlay" href="#PRODUCT_LINK"></a>
-                                <span class="product-name"><a href="product-name">Tên sản phẩm</a></span>
-                            </li>
+                        <div class="container">
+                            <span id="prev"><i class="fa fa-chevron-circle-left"></i></span>
+                            <span id="next"><i class="fa fa-chevron-circle-right"></i></span>
+                            <ul id="product-slider">
+                                <?php foreach($featured_products as $_product) :
+                                    $thumb = getThumbnailByProductId($_product->id);
+                                    if(isset($thumb) && count($thumb) >= 4):
+                                        ?>
+                                        <li class="item imgLiquidFill imgLiquid">
+                                            <img src="<?php echo urldecode($thumb->image_link);?>" alt="<?php echo $_product->title;?>" />
+                                            <a class="overlay" href="/san-pham/<?php echo $_product->alias?>.html"></a>
+                                            <span class="product-name"><a href="product-name">Tên sản phẩm</a></span>
+                                        </li>
+                                    <?php endif; endforeach;?>
+                            </ul>
 
-                            <li class="item">
-                                <img src="images/product/2.jpg" alt="TÊN SẢN PHẨM" />
-                                <a class="overlay" href="#PRODUCT_LINK"></a>
-                                <span class="product-name"><a href="product-name">Tên sản phẩm</a></span>
-                            </li>
-
-                            <li class="item">
-                                <img src="images/product/1.jpg" alt="TÊN SẢN PHẨM" />
-                                <a class="overlay" href="#PRODUCT_LINK"></a>
-                                <span class="product-name"><a href="product-name">Tên sản phẩm</a></span>
-                            </li>
-
-                            <li class="item">
-                                <img src="images/product/2.jpg" alt="TÊN SẢN PHẨM" />
-                                <a class="overlay" href="#PRODUCT_LINK"></a>
-                                <span class="product-name"><a href="product-name">Tên sản phẩm</a></span>
-                            </li>
-
-                            <li class="item">
-                                <img src="images/product/1.jpg" alt="TÊN SẢN PHẨM" />
-                                <a class="overlay" href="#PRODUCT_LINK"></a>
-                                <span class="product-name"><a href="product-name">Tên sản phẩm</a></span>
-                            </li>
-
-                            <li class="item">
-                                <img src="images/product/2.jpg" alt="TÊN SẢN PHẨM" />
-                                <a class="overlay" href="#PRODUCT_LINK"></a>
-                                <span class="product-name"><a href="product-name">Tên sản phẩm</a></span>
-                            </li>
-
-                            <li class="item">
-                                <img src="images/product/1.jpg" alt="TÊN SẢN PHẨM" />
-                                <a class="overlay" href="#PRODUCT_LINK"></a>
-                                <span class="product-name"><a href="product-name">Tên sản phẩm</a></span>
-                            </li>
-
-                            <li class="item">
-                                <img src="images/product/2.jpg" alt="TÊN SẢN PHẨM" />
-                                <a class="overlay" href="#PRODUCT_LINK"></a>
-                                <span class="product-name"><a href="product-name">Tên sản phẩm</a></span>
-                            </li>
-                        </ul>
-
-                        <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                        </div>
                     </div>
                 </div>
+                <?php endif;?>
             </div>
         </div>
     </div>
 </div>
+
+
+<script>
+    $(document).ready(function() {
+        $(".imgLiquidFill").imgLiquid();
+    });
+</script>

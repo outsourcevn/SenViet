@@ -24,6 +24,8 @@ class Home extends CI_Controller {
         //Slider Data
         $data['slideData']             = $this->Mslide->All(5);
 
+        //Featured Products.
+        $data['featured_products'] = $this->db->where('publish', 1)->where('is_featured', 1)->order_by('rand()')->limit(10)->get('products')->result_object();
 
         
         //View

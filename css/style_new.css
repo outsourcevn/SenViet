@@ -560,7 +560,7 @@ button.contact-message-send:focus{
 }
 
 .main-content-container .product-img-slider, .main-content-container .news-container-heading{
-    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .main-content-container .main-product-content{
@@ -580,4 +580,8 @@ button.contact-message-send:focus{
 .main-content-container .product-related{
     border-top: 1px dashed #969696;
     padding-top:15px;
+}
+
+.main-product-content.col-md-12.row{
+    padding-top: 15px;
 }

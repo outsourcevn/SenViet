@@ -49,7 +49,7 @@
             <div class="col-md-12 item">
                 <div class="col-md-3" style="line-height: 200%;"><label for="publish">Image</label></div>
                 <div class="col-md-3"><input type="text" class="input-upload-image form-control" id="image" name="image_link" value="<?php echo (isset($post_data['image_link'])) ? $post_data['image_link'] : ''?>" /></div>
-                <div class="col-md-6"><input type="button" class="btn btn-info" onclick="BrowseServer( 'Files:/images', 'image' );" value="Browse..." /></div>
+                <div class="col-md-6"><input type="button" class="btn btn-info" onclick="BrowseServer( 'Files:/images', 'image' );" value="Browse..." /> Note : Ảnh nên có kích thước 1123px x 450px</div>
             </div>
             
             <div class="col-md-12 item">

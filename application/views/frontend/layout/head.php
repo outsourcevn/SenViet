@@ -39,6 +39,7 @@
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
     <script type="text/javascript" src="js/fixedScroll.js"></script>
+    <script type="text/javascript" src="js/imgLiquid-min.js"></script>
     <!--/Jquer-->
 
     <!--Bootstrap-->

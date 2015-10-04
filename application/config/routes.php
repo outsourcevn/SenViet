@@ -61,6 +61,7 @@ $route['thong-tin-npp'] = 'npp';
 $route['thong-tin-npp/(.*)$'] = 'npp';
 
 $route['tro-giup/hoi-dap-thuong-gap'] = 'faq/index';
+$route['tro-giup/quy-trinh-bieu-mau'] = 'faq/sheet';
 $route['tro-giup'] = 'faq/index';
 
 $route['lien-he'] = 'contact/index';

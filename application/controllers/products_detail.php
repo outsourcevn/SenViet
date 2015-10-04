@@ -35,6 +35,9 @@ class Products_detail extends CI_Controller{
             ->where('id', $categoryId)->get('category')->row_object();
 
         //View
+        //Related Product
+        $data['featured_products'] = $this->db->where('publish', 1)->where('is_featured', 1)->order_by('rand()')->limit(10)->get('products')->result_object();
+
         $data['breadcrumb'] = $this->db->where('lft <=', $category->lft)->where('rgt >=', $category->rgt)->get('category')->result_object();
         $data['category_list']      = $this->db->where('publish', 1)->order_by('lft', 'ASC')->get('category')->result_object();
         $data['cur_category']       = $category;

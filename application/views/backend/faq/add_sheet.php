@@ -2,14 +2,14 @@
     
     <ol class="breadcrumb" style="background: #d8d8d8; margin-top:20px;">
         <li><a href="<?php echo CMS_DEFAULT_BACKEND_URL?>">Trang chủ</a></li>
-        <li><a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/slide">Slides</a></li>
-        <li class="active">Thêm Slide</li>
+        <li><a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/faq">Hỏi đáp</a></li>
+        <li class="active">Thêm biểu mẫu</li>
     </ol>
     
     <?php echo form_open('')?>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Thêm Slide</h3>
+            <h3 class="panel-title">Thêm biểu mẫu</h3>
         </div>
         
         <div class="panel-body">
@@ -30,26 +30,16 @@
             ?>
         
             <div class="col-md-12 item">
-                <div class="col-md-3" style="line-height: 200%;"><label for="title">Tiêu đề</label></div>
-                <div class="col-md-9"><input id="title" name="title" class="form-control" type="text" title="Tiêu đề" value="<?php echo (isset($post_data['title'])? $post_data['title'] : '')?>" /></div>
-            </div>
-            
-            <div class="col-md-12 item">
-                <div class="col-md-3" style="line-height: 200%;"><label for="link">Link</label></div>
-                <div class="col-md-9"><input id="link" name="link" class="form-control" type="text" title="Link" value="<?php echo (isset($post_data['link'])? $post_data['link'] : '')?>" /></div>
-            </div>
-            
-            <div class="col-md-12 item">
-                <div class="col-md-3" style="line-height: 200%;"><label for="caption">Caption</label></div>
+                <div class="col-md-3" style="line-height: 200%;"><label for="file_name">Tên file</label></div>
                 <div class="col-md-9">
-                    <textarea name="caption" id="caption" class="form-control"><?php echo (isset($post_data['caption'])) ? $post_data['caption'] : ''?></textarea>
+                    <input type="text" id="file_name" name="file_name" class="form-control" value="<?php echo (isset($post_data['file_name'])? $post_data['file_name'] : '')?>"/>
                 </div>
             </div>
-            
+
             <div class="col-md-12 item">
-                <div class="col-md-3" style="line-height: 200%;"><label for="publish">Image</label></div>
-                <div class="col-md-3"><input type="text" class="input-upload-image form-control" id="image" name="image_link" /></div>
-                <div class="col-md-6"><input type="button" class="btn btn-info" onclick="BrowseServer( 'Files:/images', 'image' );" value="Browse..." /> Note : Ảnh nên có kích thước 1123px x 450px</div>
+                <div class="col-md-3" style="line-height: 200%;"><label for="link">Link</label></div>
+                <div class="col-md-3"><input type="text" class="input-upload-image form-control" id="link" name="link" value="<?php echo (isset($post_data['link'])? $post_data['link'] : '')?>" /></div>
+                <div class="col-md-6"><input type="button" class="btn btn-info" onclick="BrowseServer( 'Files:/files', 'link' );" value="Browse..." /></div>
             </div>
             
             <div class="col-md-12 item">

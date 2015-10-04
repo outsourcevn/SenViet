@@ -21,7 +21,7 @@ Class Model_product extends CI_Model
     var $created_date = null;
     var $updated_date = null;
     var $userid_created = 1;
-
+    var $show_price = 1;
 
     /**
      * Day cac bien tu du lieu truyen ve ra doi tuong

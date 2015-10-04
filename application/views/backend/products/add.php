@@ -141,7 +141,16 @@
                         </div>
                     </div>
                 </div>
-                
+
+
+                <div class="col-md-12 item">
+                    <div class="col-md-3" style="line-height: 200%;"><label for="show_price">Hiển thị giá</label></div>
+                    <div class="col-md-9">
+                        <label>Hiện <input type="radio" name="show_price" class="" value="1" <?php echo ((isset($post_data['show_price']) && $post_data['show_price'] == 1) || !isset($post_data['show_price'])) ? 'checked' : ''?>/></label>
+                        <label>Ẩn <input type="radio" name="show_price" class="" value="0" <?php echo (isset($post_data['show_price']) && $post_data['show_price'] == 0) ? 'checked' : ''?> /></label>
+                    </div>
+                </div>
+
                 <div class="col-md-12 item text-center">
                     <button name="cmd" value="submit" class="btn btn-success" type="submit">Submit</button>
                     <input type="reset" class="btn" value="Reset"/>
