@@ -15,10 +15,10 @@ Class Authen {
         if($userdata = $this->CI->session->userdata('session_login')){
             
             if($ServerUserData = $this->CI->db->where('id', $userdata['id'])->get('username')->row_array()){
-                if($ServerUserData != $userdata){
-                    $this->logout();
-                    redirect(CMS_LOGIN_BACKEND_URL.'?redir='.base64_encode(current_url()));
-                }
+//                if($ServerUserData != $userdata){
+//                    $this->logout();
+//                    redirect(CMS_LOGIN_BACKEND_URL.'?redir='.base64_encode(current_url()));
+//                }
             }
             else
             {

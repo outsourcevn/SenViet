@@ -34,21 +34,27 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-
+    <script type="text/javascript" src="/library/fullCalendar/lib/moment.min.js"></script>
     <!--Jquer-->
-    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
-    <script type="text/javascript" src="js/fixedScroll.js"></script>
-    <script type="text/javascript" src="js/imgLiquid-min.js"></script>
+    <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+    <script type="text/javascript" src="/js/fixedScroll.js"></script>
+    <script type="text/javascript" src="/js/imgLiquid-min.js"></script>
     <!--/Jquer-->
 
+    <!--FullCalendar-->
+    <script type="text/javascript" src="/library/fullCalendar/fullcalendar.min.js"></script>
+    <link rel="stylesheet" href="/library/fullCalendar/fullcalendar.css" type="text/css"/>
+    <link rel="stylesheet" href="/library/fullCalendar/fullcalendar.print.css"  media='print' type="text/css"/>
+    <!--/FullCalendar-->
+
     <!--Bootstrap-->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css"/>
     <!--/Bootstrap-->
 
     <!--Custom Css-->
-    <link rel="stylesheet" href="css/style_new.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/style_new.css" type="text/css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
     <!--/Custom Css-->
 

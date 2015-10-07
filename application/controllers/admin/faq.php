@@ -81,7 +81,7 @@ class Faq extends CI_Controller {
         if(is_numeric($id)){
             if($this->Mfaq->SelectByID($id)){
                 $this->Mfaq->delete($id);
-                $this->mycommonlib->redir_alert('Xóa người dùng thành công.', isset($redir) ? base64_decode($redir) : CMS_DEFAULT_BACKEND_URL.'/faq/');
+                $this->mycommonlib->redir_alert('Xóa thành công.', isset($redir) ? base64_decode($redir) : CMS_DEFAULT_BACKEND_URL.'/faq/');
             }else{
                 $this->mycommonlib->redir_alert('Trang bạn yêu cầu không đúng.', isset($redir) ? base64_decode($redir) : CMS_DEFAULT_BACKEND_URL.'/faq/');
             }
@@ -96,7 +96,7 @@ class Faq extends CI_Controller {
         $redir = $this->input->get('redir');
 
         if(!in_array($field, $allow_arr)){
-            $this->mycommonlib->redir_alert('Trang bạn yêu cầu không đúng!',($redir == null) ? CMS_DEFAULT_BACKEND_URL.'/products/':base64_decode($redir));
+            $this->mycommonlib->redir_alert('Trang bạn yêu cầu không đúng!',($redir == null) ? CMS_DEFAULT_BACKEND_URL.'/faq/':base64_decode($redir));
         }
 
         if(!$this->Mfaq->toggle_item($field, $id)){

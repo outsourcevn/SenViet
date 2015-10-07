@@ -52,11 +52,13 @@ $route['(.*).html$'] = 'news_detail/index/tin-tuc/$1';
 $route['tin-tuc'] = 'news/index/tin-tuc';
 $route['tin-tuc/(.*)$'] = 'news/index/tin-tuc/$1';
 
+$route['dao-tao/lich-lam-viec'] = 'calendar/working';
 $route['dao-tao'] = 'training/index/dao-tao';
 $route['dao-tao/(.*)$'] = 'training/index/$1';
 
 $route['gioi-thieu'] = 'introduce';
 $route['chi-nhanh'] = 'department';
+$route['thong-tin-npp/lich-su-kien-npp'] = 'calendar/events';
 $route['thong-tin-npp'] = 'npp';
 $route['thong-tin-npp/(.*)$'] = 'npp';
 

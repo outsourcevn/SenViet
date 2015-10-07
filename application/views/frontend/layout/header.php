@@ -47,7 +47,7 @@
 
         <!--Login Area-->
         <div class="login-dialog pull-right hidden-sm hidden-xs col-lg-1">
-            <button class="btn btn-success" type="button" name="login-btn" onclick="location.href='http://login.senvietgroup.vn'">&nbsp;&nbsp;<i class="fa fa-key"></i>&nbsp;&nbsp; Login &nbsp;&nbsp;</button>
+            <button class="btn btn-success" type="button" name="login-btn" onclick="location.href='http://login.senvietgroup.vn'">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp; &nbsp;&nbsp;Login &nbsp;&nbsp;&nbsp;&nbsp;</button>
         </div>
         <!--/Login Area-->
         <div class="clearfix"></div>

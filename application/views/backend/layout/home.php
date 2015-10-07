@@ -6,14 +6,15 @@
     <meta charset="utf-8" />
     <base href="<?php echo base_url()?>" />
 	<title>Quản trị</title>
-    
+
     <!--Jquery-->
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/js/jquery-2.1.4.min.js"></script>
+    <script src="/js/jquery-migrate-1.2.1.min.js"></script>
     <!--DatePicker-->
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <script src="/js/jquery.datetimepicker.full.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    
+    <link rel="stylesheet" href="/css/jquery.datetimepicker.css">
     <!--Bootstrap-->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -96,8 +97,11 @@
                     <a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/faq">Trợ giúp<span class="sub_icon glyphicon glyphicon-question-sign"></span></a>
                     <ul>
                         <li><a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/faq/">CH thường gặp</a></li>
+                        <li><a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/faq_sheet/">Biểu mẫu</a></li>
                     </ul>
                 </li>
+
+                <li><a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/calendar">Lịch<span class="sub_icon glyphicon glyphicon-calendar"></span></a></li>
 
                 <li><a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/contacts">Liên hệ<span class="sub_icon glyphicon glyphicon-envelope"></span></a></li>
             </ul>
