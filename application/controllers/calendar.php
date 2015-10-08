@@ -141,19 +141,48 @@ class Calendar extends CI_Controller{
             $data['configuration'] = $this->configs;
             $data['configuration']->meta_title = $data['detail']->title.' - '.$data['configuration']->meta_title;
 
-            $data['breadcrumb'] = array(
-                array(
-                    'title' => 'Lịch biểu',
-                    'href'  => '#'
-                ),
-                array(
-                    'title' => $data['detail']->title,
-                    'href'  => current_url()
-                ),
-            );
-
             //View
-            $data['tpl']                = 'frontend/calendar/detail';
+            if($data['detail']->category_id == 1){
+                $data['breadcrumb'] = array(
+                    array(
+                        'title' => 'Đào Tạo',
+                        'href'  => '/dao-tao/'
+                    ),
+                    array(
+                        'title' => 'Lịch làm việc',
+                        'href'  => '/dao-tao/lich-lam-viec/'
+                    ),
+                    array(
+                        'title' => $data['detail']->title,
+                        'href'  => current_url()
+                    ),
+                );
+                
+                $data['active_nav'] = 'nav_training';
+                
+                $data['tpl']                = 'frontend/calendar/working_detail';
+            }
+            else
+            {
+                $data['breadcrumb'] = array(
+                    array(
+                        'title' => 'Đào Tạo',
+                        'href'  => '/dao-tao/'
+                    ),
+                    array(
+                        'title' => 'Lịch làm việc',
+                        'href'  => '/dao-tao/lich-lam-viec/'
+                    ),
+                    array(
+                        'title' => $data['detail']->title,
+                        'href'  => current_url()
+                    ),
+                );
+                
+                $data['active_nav'] = 'nav_npp';
+                $data['tpl']                = 'frontend/calendar/event_detail';
+            }
+                
             if($this->configs->is_active){
                 $this->load->view('frontend/layout/1-column', $data);
             }else{
