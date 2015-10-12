@@ -106,7 +106,7 @@
                         <div class="col-sm-6"><strong>Giá bán lẻ:</strong></div><div class="col-sm-6"><span><?php echo ($cur_product->price && $cur_product->show_price == 1) ? number_format($cur_product->price).' VNĐ' : 'Liên hệ';?></span></div>
                         <div class="col-sm-6"><strong>Mã số sản phẩm:</strong></div><div class="col-sm-6"><span>#<?php echo $cur_product->id;?></span></div>
 
-                        <div class="col-sm-12 product-short-description">
+                        <div class="col-sm-12 row product-short-description">
                             <?php echo html_entity_decode($cur_product->description);?>
                         </div>
                         <div class="clearfix"></div>
