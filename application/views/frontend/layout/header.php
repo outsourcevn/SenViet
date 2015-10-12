@@ -14,11 +14,11 @@
             <ul class="nav navbar-nav">
                 <li class="nav_home"><a href="<?php echo base_url()?>">Trang chủ</a></li>
                 <li class="nav_introduce"><a href="/gioi-thieu/">Giới thiệu</a></li>
-                <li class="nav_news"><a href="#">Tin tức</a></li>
-                <li class="nav_product"><a href="#">Sản phẩm</a></li>
+                <li class="nav_news"><a href="/tin-tuc/">Tin tức</a></li>
+                <li class="nav_product"><a href="/san-pham/">Sản phẩm</a></li>
                 <li class="nav_training"><a href="/dao-tao/">Đào Tạo</a></li>
-                <li class="nav_department"><a href="#">Chi nhánh</a></li>
-                <li class="nav_npp"><a href="#">Thông tin NPP</a></li>
+                <li class="nav_department"><a href="/chi-nhanh/">Chi nhánh</a></li>
+                <li class="nav_npp"><a href="/thong-tin-npp/">Thông tin NPP</a></li>
                 <li class="nav_faq"><a href="/tro-giup/">Trợ giúp</a></li>
                 <li class="nav_contact"><a href="/lien-he/">Liên hệ</a></li>
             </ul>
@@ -67,11 +67,7 @@
             </li>
             <li class="nav_product">
                 <a href="/san-pham/">Sản phẩm</a>
-                <ul>
-                    <li class="subItems"><a href="/san-pham/san-pham-chuc-nang/">Sản phẩm chức năng</a></li>
-                    <li class="subItems"><a href="/san-pham/my-pham">Mỹ phẩm</a></li>
-                    <li class="subItems"><a href="/san-pham/hang-tieu-dung/">Hàng tiêu dùng</a></li>
-                </ul>
+                <?php echo genProductCategoryNav();?>
             </li>
             <li class="nav_training">
                 <a href="/dao-tao/">Đào Tạo</a>

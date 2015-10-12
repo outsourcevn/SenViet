@@ -20,7 +20,7 @@ class Configs extends CI_Controller {
         if($this->input->post()){
             $data['post_data'] = $this->input->post();
             
-            $data['post_data'] = $this->mycommonlib->Filter_Field($data['post_data'], array('homepage', 'is_active', 'perpage', 'maintain_message', 'flash_message', 'meta_title', 'meta_keyword', 'meta_description'));
+            $data['post_data'] = $this->mycommonlib->Filter_Field($data['post_data'], array('homepage', 'is_active', 'perpage', 'maintain_message', 'flash_message', 'meta_title', 'meta_keyword', 'meta_description', 'address', 'email', 'telephone'));
             
             $this->db->update('configs', $data['post_data']);
             

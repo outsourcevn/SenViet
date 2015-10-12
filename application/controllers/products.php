@@ -32,8 +32,6 @@ class Products extends CI_Controller{
             $config['first_url']    = '/san-pham/?show';
             $config['total_rows'] = $this->db
                 ->where('publish', 1)
-                ->order_by('created_date', 'DESC')
-                //->limit($perpage, $page)
                 ->get('products')
                 ->num_rows();
 
@@ -47,6 +45,7 @@ class Products extends CI_Controller{
 
             $data['product_list'] = $this->db
                 ->where('publish', 1)
+                ->order_by('order', 'ASC')
                 ->order_by('created_date', 'DESC')
                 ->limit($config['per_page'], $page)
                 ->get('products')
@@ -80,6 +79,7 @@ class Products extends CI_Controller{
                     ->where('publish', 1)
                     ->where('product_cate.category_id', $category->id)
                     ->group_by('products.id')
+                    ->order_by('order', 'ASC')
                     ->order_by('created_date', 'DESC')
                     ->get()->num_rows();
 
@@ -97,6 +97,7 @@ class Products extends CI_Controller{
                     ->where('publish', 1)
                     ->where('product_cate.category_id', $category->id)
                     ->group_by('products.id')
+                    ->order_by('order', 'ASC')
                     ->order_by('created_date', 'DESC')
                     ->limit($config['per_page'], $page)
                     ->get()

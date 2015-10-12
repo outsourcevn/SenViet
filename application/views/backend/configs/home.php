@@ -71,12 +71,20 @@
                     <textarea name="maintain_message" class="form-control" id="editor1"><?php echo (isset($post_data['maintain_message']) ? $post_data['maintain_message'] : '')?></textarea>
                 </div>
             </div>
-            
+
             <div class="col-md-12 item">
-                <div class="col-md-3" style="line-height: 200%;"><label for="flash_message">Flash Message</label></div>
-                <div class="col-md-9">
-                    <textarea name="flash_message" class="form-control"  id="editor2"><?php echo (isset($post_data['flash_message']) ? $post_data['flash_message'] : '')?></textarea>
-                </div>
+                <div class="col-md-3" style="line-height: 200%;"><label for="address">Địa chỉ</label></div>
+                <div class="col-md-9"><input id="address" name="address" class="form-control" type="text" title="address" value="<?php echo (isset($post_data['address'])? $post_data['address'] : '')?>" /></div>
+            </div>
+
+            <div class="col-md-12 item">
+                <div class="col-md-3" style="line-height: 200%;"><label for="telephone">Điện thoại</label></div>
+                <div class="col-md-9"><input id="telephone" name="telephone" class="form-control" type="text" title="Điện thoại" value="<?php echo (isset($post_data['telephone'])? $post_data['telephone'] : '')?>" /></div>
+            </div>
+
+            <div class="col-md-12 item">
+                <div class="col-md-3" style="line-height: 200%;"><label for="email">Thư điện tử</label></div>
+                <div class="col-md-9"><input id="email" name="email" class="form-control" type="text" title="Thư điện tử" value="<?php echo (isset($post_data['email'])? $post_data['email'] : '')?>" /></div>
             </div>
             
             <div class="col-md-12 item text-center">

@@ -257,6 +257,30 @@ if(!function_exists('genNppNavItem')){
     }
 }
 
+if(!function_exists('genProductCategoryNav')){
+    function genProductCategoryNav(){
+        $CI = &get_instance();
+
+        $posts = $CI->db
+            ->where('id !=', 1)
+            ->where('level', 2)
+            ->where('publish', 1)
+            ->order_by('lft', 'ASC')
+            ->get('category')
+            ->result_object();
+
+        $return = '<ul>';
+
+        foreach($posts as $_post){
+            $return .= '<li class="subItems"><a href="/san-pham/'.$_post->alias.'">'.$_post->title.'</a></li>';
+        }
+
+        $return .= '</ul>';
+
+        return $return;
+    }
+}
+
 if(!function_exists('getThumbnailByProductId')){
     function getThumbnailByProductId($productId = 0){
         $CI = &get_instance();

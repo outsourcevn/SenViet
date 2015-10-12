@@ -8,9 +8,9 @@
             <div class="col-lg-12" style="border-bottom: 1px dashed #aeaeae;">
                 <p class="company-heading">CÔNG TY CỔ PHẦN ĐT SX & TM SEN VIỆT GROUP</p>
                 <address>
-                    <p><i class="fa fa-map-marker" style="color: #f166ab"></i> &nbsp;Số 17/15 Phương Mai - Đống Đa - Hà Nội</p>
-                    <p><i class="fa fa-mobile" style="color: #f166ab"></i> &nbsp;&nbsp;0914 859 999</p>
-                    <p><i class="fa fa-envelope" style="color: #f166ab"></i> <a href="mailto:Senvietgroup@gmail.com">Senvietgroup@gmail.com</a> </p>
+                    <p><i class="fa fa-map-marker" style="color: #f166ab"></i> &nbsp;<?php echo $configuration->address?></p>
+                    <p><i class="fa fa-mobile" style="color: #f166ab"></i> &nbsp;&nbsp;<?php echo $configuration->telephone?></p>
+                    <p><i class="fa fa-envelope" style="color: #f166ab"></i> <a href="mailto:<?php echo $configuration->email?>"><?php echo $configuration->email?></a> </p>
                 </address>
             </div>
             <br/>

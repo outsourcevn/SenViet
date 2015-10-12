@@ -28,9 +28,14 @@ class Products_detail extends CI_Controller{
 
         $data['cur_product'] = $this->db->where('alias', $alias)->where('publish', 1)->get('products')->row_object();
 
+        $categoryIdQuery = $this->db->where('product_id', $data['cur_product']->id)
+            ->get('product_cate');
+        if($categoryIdQuery->num_rows() == 1){
+            $categoryId = $categoryIdQuery->row_object()->category_id;
+        } else {
+            $categoryId = 1;
+        }
 
-        $categoryId = $this->db->where('product_id', $data['cur_product']->id)
-            ->get('product_cate')->row_object()->category_id;
         $category = $this->db
             ->where('id', $categoryId)->get('category')->row_object();
 

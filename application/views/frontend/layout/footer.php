@@ -4,13 +4,13 @@
     <div class="container">
         <ul class="footer-links">
             <li><span class="footer-heading">CÔNG TY CỔ PHẦN ĐT SX &amp; TM SEN VIỆT</span></li>
-            <li><i class="fa fa-home"></i> Số 7/15 Phương Mai - Đống Đa - Hà Nội</li>
-            <li><i class="fa fa-mobile"></i> 0914 859 999</li>
-            <li><i class="fa fa-envelope"></i> senvietgroup@gmail.com</li>
+            <li><i class="fa fa-home"></i> <?php echo $configuration->address?></li>
+            <li><i class="fa fa-mobile"></i> <?php echo $configuration->telephone;?></li>
+            <li><i class="fa fa-envelope"></i> <?php echo $configuration->email?></li>
         </ul>
 
         <ul class="footer-links">
-            <li><span class="footer-heading">Trang chủ • liên hệ • trợ giúp • quy định sử dụng • sơ đồ site</span></li>
+            <li><span class="footer-heading"><a href="<?php echo base_url()?>">Trang chủ</a> • <a href="/lien-he/">Liên hệ</a> • <a href="/tro-giup/">Trợ giúp</a> • <a href="#">quy định sử dụng</a> • <a href="#">sơ đồ site</a></span></li>
             <li>© Copyright Sen Viet Group 2015</li>
             <li>Design by Solution </li>
         </ul>
