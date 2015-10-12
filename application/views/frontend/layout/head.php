@@ -44,6 +44,7 @@
 
     <!--FullCalendar-->
     <script type="text/javascript" src="/library/fullCalendar/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="/library/fullCalendar/lang-all.js"></script>
     <link rel="stylesheet" href="/library/fullCalendar/fullcalendar.css" type="text/css"/>
     <link rel="stylesheet" href="/library/fullCalendar/fullcalendar.print.css"  media='print' type="text/css"/>
     <!--/FullCalendar-->

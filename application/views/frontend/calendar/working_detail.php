@@ -43,8 +43,8 @@
                 <article class="col-md-12 item row">
                     <div class="col-md-12 row text-justify">
                         <div class="post-date">
-                            <span class="glyphicon glyphicon-log-in"></span> <?php echo gmdate('H:i', strtotime($detail->start_time));?> | <?php echo gmdate('d/m/Y', strtotime($detail->start_time));?>
-                            <span class="glyphicon glyphicon-log-out"></span> <?php echo gmdate('H:i', strtotime($detail->end_time));?> | <?php echo gmdate('d/m/Y', strtotime($detail->end_time));?>
+                            <span class="glyphicon glyphicon-log-in"></span> <?php echo gmdate('H:i', strtotime($detail->start_time)+7*3600);?> | <?php echo gmdate('d/m/Y', strtotime($detail->start_time)+7*3600);?>
+                            <span class="glyphicon glyphicon-log-out"></span> <?php echo gmdate('H:i', strtotime($detail->end_time)+7*3600);?> | <?php echo gmdate('d/m/Y', strtotime($detail->end_time)+7*3600);?>
                         </div>
                         <br/><br/>
                         <strong><?php //echo html_entity_decode($detail->description)?></strong>

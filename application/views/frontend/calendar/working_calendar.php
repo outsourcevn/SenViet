@@ -27,8 +27,9 @@
                     right: 'month,agendaWeek,agendaDay'
                 },
                 defaultDate: '<?php echo date('Y-m-d');?>',
-                editable: true,
+                editable: false,
                 eventLimit: true, // allow "more" link when too many events
+                lang: 'vi',
                 events: {
                     url: '/calendar/working_schedule/',
                     error: function() {
