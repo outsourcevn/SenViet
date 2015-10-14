@@ -6,7 +6,7 @@
         </ol>
         <div class="col-lg-12">
             <div class="col-lg-12" style="border-bottom: 1px dashed #aeaeae;">
-                <p class="company-heading">CÔNG TY CỔ PHẦN ĐT SX & TM SEN VIỆT GROUP</p>
+                <p class="company-heading"><?php echo $configuration->slogan?></p>
                 <address>
                     <p><i class="fa fa-map-marker" style="color: #f166ab"></i> &nbsp;<?php echo $configuration->address?></p>
                     <p><i class="fa fa-mobile" style="color: #f166ab"></i> &nbsp;&nbsp;<?php echo $configuration->telephone?></p>

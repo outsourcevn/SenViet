@@ -71,6 +71,11 @@
                     <textarea name="maintain_message" class="form-control" id="editor1"><?php echo (isset($post_data['maintain_message']) ? $post_data['maintain_message'] : '')?></textarea>
                 </div>
             </div>
+            
+            <div class="col-md-12 item">
+                <div class="col-md-3" style="line-height: 200%;"><label for="slogan">Slogan</label></div>
+                <div class="col-md-9"><input id="slogan" name="slogan" class="form-control" type="text" title="Slogan" value="<?php echo (isset($post_data['slogan'])? $post_data['slogan'] : '')?>" /></div>
+            </div>
 
             <div class="col-md-12 item">
                 <div class="col-md-3" style="line-height: 200%;"><label for="address">Địa chỉ</label></div>

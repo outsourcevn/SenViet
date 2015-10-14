@@ -3,7 +3,7 @@
 <footer>
     <div class="container">
         <ul class="footer-links">
-            <li><span class="footer-heading">CÔNG TY CỔ PHẦN ĐT SX &amp; TM SEN VIỆT</span></li>
+            <li><span class="footer-heading"><?php echo $configuration->slogan?></span></li>
             <li><i class="fa fa-home"></i> <?php echo $configuration->address?></li>
             <li><i class="fa fa-mobile"></i> <?php echo $configuration->telephone;?></li>
             <li><i class="fa fa-envelope"></i> <?php echo $configuration->email?></li>
