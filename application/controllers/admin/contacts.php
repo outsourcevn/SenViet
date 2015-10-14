@@ -72,6 +72,7 @@ class Contacts extends CI_Controller{
 
         //Data to transport
         $data['input_data']= $this->Mcontact->SelectByX($param, $keyword, $order_by, $page, $perpage);
+        $data['usergroup'] = $this->db->order_by('id', 'ASC')->get('usergroup')->result_object();
         $data['pagination'] = $this->pagination->create_links();
         $data['keyword'] = $keyword;
         $data['to'] = $to;

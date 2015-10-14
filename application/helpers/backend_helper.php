@@ -248,3 +248,13 @@ if(!function_exists('get_product_by_id')){
         return '-';
     }
 }
+
+function getGroupNameById($id) {
+    $CI =&get_instance();
+    $data = $CI->db->select('title')->where('id', $id)->get('usergroup')->row_object();
+
+    if(isset($data)){
+        return $data->title;
+    }
+    return '-';
+}

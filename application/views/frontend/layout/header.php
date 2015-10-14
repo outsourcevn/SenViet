@@ -23,7 +23,7 @@
                 <li class="nav_contact"><a href="/lien-he/">Liên hệ</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://dangnhap.senvietgroup.vn/">Đăng Nhập</a></li>
+                <li><a href="http://dangnhap.senvietgroup.vn/" target="_blank">Đăng Nhập</a></li>
                 <li>
                     <div id="search-mobile" class="text-center">
                         <form name="nav-search" method="GET" action="./">
@@ -46,7 +46,9 @@
 
         <!--Login Area-->
         <div class="login-dialog pull-right hidden-sm hidden-xs col-lg-1">
-            <button class="btn btn-success" type="button" name="login-btn" onclick="location.href='http://dangnhap.senvietgroup.vn'">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp; &nbsp;&nbsp;Đăng nhập&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <a href="//dangnhap.senvietgroup.vn" target="_blank">
+                <button class="btn btn-success" type="button" name="login-btn">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp; &nbsp;&nbsp;Đăng nhập&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            </a>
         </div>
         <!--/Login Area-->
         <div class="clearfix"></div>

@@ -41,9 +41,11 @@
                             <td>
                                 <select name="to" style="width: 100%;">
                                     <option value="0" <?php echo ($to == 0) ? 'selected' : ''?>>All</option>
-                                    <option value="1" <?php echo ($to == 1) ? 'selected' : ''?>>Giám Đốc</option>
-                                    <option value="2" <?php echo ($to == 2) ? 'selected' : ''?>>Kinh Doanh</option>
-                                    <option value="3" <?php echo ($to == 3) ? 'selected' : ''?>>Marketing</option>
+                                    <?php if(isset($usergroup) && count($usergroup)):
+                                        foreach($usergroup as $_group):
+                                    ?>
+                                            <option value="<?php echo $_group->id;?>" <?php echo ($to == $_group->id) ? 'selected' : ''?>><?php echo $_group->title;?></option>
+                                    <?php endforeach; endif;?>
                                 </select>
                             </td>
 
@@ -85,7 +87,7 @@
                                 <td><input type="checkbox" name="id[]" class="item-checkbox" value="<?php echo $val['id']?>" /></td>
                                 <td><?php echo $val['id']?></td>
                                 <td><?php echo (isset($val['title'])) ? ($val['title']) : ' - '?></td>
-                                <td><?php echo ($val['to'] === 1) ? 'Ban giám đốc' : ($val['to'] === 2) ? 'Ban kinh doanh' : ($val['to'] === 2) ? 'Marketing' : 'All'?> </td>
+                                <td><?php echo getGroupNameById($val['to']);?></td>
                                 <td><a href="<?php echo CMS_DEFAULT_BACKEND_URL?>/contacts/contact_toogle/seen/<?php echo $val['id'].'/?redir='.base64_encode(current_url().'?'.$_SERVER['QUERY_STRING']);?>"><span class="glyphicon glyphicon-<?php echo ($val['seen'] == 1) ? 'ok' : 'remove'?>"></span></a></td>
                                 <td><?php echo gmdate('d-m-Y H:i:s', strtotime($val['created_date'])+8*3600);?></td>
                                 <td><?php echo gmdate('d-m-Y H:i:s', strtotime($val['updated_date'])+8*3600);?></td>

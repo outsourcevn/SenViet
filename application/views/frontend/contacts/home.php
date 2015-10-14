@@ -72,9 +72,11 @@
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Ban giám đốc</a></li>
-                                    <li><a href="#">Phòng kinh doanh</a></li>
-                                    <li><a href="#">Phòng marketing</a></li>
+                                    <?php if(isset($usergroup) && count($usergroup) > 0):
+                                        foreach($usergroup as $_group):
+                                        ?>
+                                        <li><a href="#" data-group="<?php echo $_group->id;?>"><?php echo $_group->title;?></a></li>
+                                    <?php endforeach; endif;?>
                                 </ul>
 
                                 <script>
@@ -83,10 +85,8 @@
                                             e.preventDefault();
 
                                             $label = jQuery(this).children().html();
-                                            $mailTo = 0;
-                                            if($label == 'Ban giám đốc') $mailTo = 1;
-                                            if($label == 'Phòng kinh doanh') $mailTo = 2;
-                                            if($label == 'Phòng marketing') $mailTo = 3;
+
+                                            var $mailTo = jQuery(this).children().attr('data-group');
 
                                             jQuery('.massage-to-value').val($mailTo);
 
