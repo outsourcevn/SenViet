@@ -38,7 +38,7 @@
                 <li class="item imgLiquidFill imgLiquid">
                     <img src="<?php echo urldecode($thumb->image_link);?>" alt="<?php echo $_product->title;?>" />
                     <a class="overlay" href="/san-pham/<?php echo $_product->alias?>.html"></a>
-                    <span class="product-name"><a href="product-name">Tên sản phẩm</a></span>
+                    <span class="product-name"><a href="/san-pham/<?php echo $_product->alias?>.html"><?php echo $_product->title;?></a></span>
                 </li>
                 <?php endif; endforeach;?>
             </ul>
