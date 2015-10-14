@@ -33,7 +33,7 @@
             <ul id="product-slider">
                 <?php foreach($featured_products as $_product) :
                     $thumb = getThumbnailByProductId($_product->id);
-                    if(isset($thumb) && count($thumb) >= 4):
+                    if(isset($thumb)):
                 ?>
                 <li class="item imgLiquidFill imgLiquid">
                     <img src="<?php echo urldecode($thumb->image_link);?>" alt="<?php echo $_product->title;?>" />
