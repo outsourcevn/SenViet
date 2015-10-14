@@ -52,6 +52,10 @@
 
 <script>
     $(document).ready(function() {
-        $(".imgLiquidFill").imgLiquid();
+        $(".imgLiquidFill").imgLiquid({
+            fill: true,
+            verticalAlign: "center",
+            horizontalAlign: "center"
+        });
     });
 </script>
