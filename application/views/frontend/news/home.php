@@ -30,7 +30,7 @@
                 <?php endif;?>
                 <?php if(isset($featuredProducts) && is_array($featuredProducts) && count($featuredProducts) > 0) :?>
                 <div class="panel-left">
-                        <div class="left-panel-heading">Sản phẩm bán chạy</div>
+                        <div class="left-panel-heading">Sản phẩm nổi bật</div>
                         <div class="panel-left-body">
                             <ul class="left-panel-contain">
                                 <?php foreach($featuredProducts as $_product):?>
@@ -42,7 +42,7 @@
                 <?php endif;?>
             </div>
             <div class="col-lg-9 main-content-container">
-                <h3 class="news-container-heading"><?php echo (isset($cur_category->title)) ? $cur_category->title : '-';?></h3>
+<!--                <h3 class="news-container-heading">--><?php //echo (isset($cur_category->title)) ? $cur_category->title : '-';?><!--</h3>-->
                 <div class="main-content col-md-12">
                     <?php if(is_array($list_post) && count($list_post) > 0) :
                             foreach($list_post as $_postitem):

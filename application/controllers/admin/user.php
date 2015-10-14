@@ -269,7 +269,7 @@ class User extends CI_Controller {
     		$this->form_validation->set_message('required', '%s không được để trống.');
     		$this->form_validation->set_message('valid_email', 'Email bạn nhập không đúng định dạng.');
     		
-    		$New_data = $this->mycommonlib->Filter_Field($data['post_data'], array('password', 'email', 'fullname'));
+    		$New_data = $this->mycommonlib->Filter_Field($data['post_data'], array('password', 'email', 'fullname', 'usergroupid'));
     		
     		if($this->form_validation->run() == TRUE){
     			$this->Muser->ModifyRow($New_data, $raw_data['username']);

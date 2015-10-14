@@ -125,7 +125,7 @@
                         $this->load->view((isset($tpl))? $tpl : '', (isset($data))? $data : NULL);
                     ?>
                     <div class="col-lg-12 text-center" style="position: fixed; z-index:10000; bottom: 0px; background: #222; color:#999999; padding : 3px;">
-                        Created by minhducck
+                        SenViet CMS version 1.0
                     </div>
                 </div>
             </div>

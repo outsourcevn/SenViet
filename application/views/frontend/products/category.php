@@ -34,7 +34,7 @@
                 <?php endif;?>
                 <?php if(isset($featuredProducts) && is_array($featuredProducts) && count($featuredProducts) > 0) :?>
                     <div class="panel-left">
-                        <div class="left-panel-heading">Sản phẩm bán chạy</div>
+                        <div class="left-panel-heading">Sản phẩm nổi bật</div>
                         <div class="panel-left-body">
                             <ul class="left-panel-contain">
                                 <?php foreach($featuredProducts as $_product):?>
@@ -47,7 +47,7 @@
             </div>
 
             <div class="col-lg-9 main-content-container">
-                <h3 class="news-container-heading"><?php echo ($cur_category->title == 'HOME') ? 'Trang chủ' : $cur_category->title;?></h3>
+<!--                <h3 class="news-container-heading">--><?php //echo ($cur_category->title == 'HOME') ? 'Trang chủ' : $cur_category->title;?><!--</h3>-->
                 <div class="main-product-content col-md-12 row">
                     <?php if(isset($product_list) && count($product_list) > 0): ?>
                         <?php foreach($product_list as $_product):

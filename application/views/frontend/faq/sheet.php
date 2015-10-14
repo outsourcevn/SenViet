@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="col-lg-9 main-content-container">
-                <h3 class="news-container-heading">Quy Trình - Biểu Mẫu</h3>
+<!--                <h3 class="news-container-heading">Quy Trình - Biểu Mẫu</h3>-->
                 <div class="main-content col-md-12">
                     <?php if(isset($sheet_data) && count($sheet_data) > 0):?>
                         <table style="width: 100%; margin: 5px auto; padding: 0px 5px;" class="table table-bordered table-hover">

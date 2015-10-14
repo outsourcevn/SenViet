@@ -91,7 +91,7 @@
             </fieldset>
             <hr />
             <section class="text-right">
-                Created by minhducck
+                SenViet CMS version 1.0
             </section>
         </form>
     </div>

@@ -17,7 +17,7 @@
         </div>
         <div class="col-lg-12">
             <div class="col-lg-3 row">
-                <?php if(is_array($introduceNews) && count($introduceNews) > 0) :?>
+                <?php if(isset($introduceNews) && is_array($introduceNews) && count($introduceNews) > 0) :?>
                 <div class="panel-left">
                         <div class="left-panel-heading">Giới thiệu</div>
                         <div class="panel-left-body">
@@ -29,9 +29,38 @@
                         </div>
                 </div>
                 <?php endif;?>
+
+<!--                /**Dao Tao**/-->
+                <?php if(isset($trainingCategory) &&is_array($trainingCategory) && count($trainingCategory) > 0) :?>
+                    <div class="panel-left">
+                        <div class="left-panel-heading">Đào Tạo</div>
+                        <div class="panel-left-body">
+                            <ul class="left-panel-contain">
+                                <?php foreach($trainingCategory as $_news):?>
+                                    <li class="<?php echo ($_news->id == $cur_news->id)?'active':''?>"><a href="<?php echo $_news->alias?>.html"><?php echo $_news->title?></a></li>
+                                <?php endforeach;?>
+                            </ul>
+                        </div>
+                    </div>
+                <?php endif;?>
+
+<!--                Tin Tuc-->
+                <?php if(isset($departmentCategory) && is_array($departmentCategory) && count($departmentCategory) > 0) :?>
+                    <div class="panel-left">
+                        <div class="left-panel-heading">Tin Tức</div>
+                        <div class="panel-left-body">
+                            <ul class="left-panel-contain">
+                                <?php foreach($departmentCategory as $_news):?>
+                                    <li class="<?php echo ($_news->id == $cur_news->id)?'active':''?>"><a href="<?php echo $_news->alias?>.html"><?php echo $_news->title?></a></li>
+                                <?php endforeach;?>
+                            </ul>
+                        </div>
+                    </div>
+                <?php endif;?>
+
             </div>
             <div class="col-lg-9 main-content-container">
-                <h3 class="news-container-heading"><?php echo $cur_news->title;?></h3>
+<!--                <h3 class="news-container-heading">--><?php //echo $cur_news->title;?><!--</h3>-->
                 <article class="col-md-12 item row">
                     <div class="col-md-12 row text-justify">
                         <div class="post-date">

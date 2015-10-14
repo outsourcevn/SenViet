@@ -61,6 +61,31 @@ class Department extends CI_Controller{
                 ->limit($this->configs->perpage, $page)
                 ->get('news')->result_object();
 
+            //Training
+            $newsId = $this->db->where('alias', 'dao-tao')->get('category_news')->row_object()->id;
+
+            $posts = $this->db
+                ->where('publish', 1)
+                ->where('parentid', $newsId)
+                ->order_by('order', 'ASC')
+                ->order_by('id', 'ASC')
+                ->get('category_news')
+                ->result_object();
+
+            $data['trainingCategory'] = $posts;
+
+            $newsId = $this->db->where('alias', 'tin-tuc')->get('category_news')->row_object()->id;
+
+            $posts = $this->db
+                ->where('publish', 1)
+                ->where('parentid', $newsId)
+                ->order_by('order', 'ASC')
+                ->order_by('id', 'ASC')
+                ->get('category_news')
+                ->result_object();
+
+            $data['departmentCategory'] = $posts;
+
         } else {
             redirect('/');
         }
@@ -109,6 +134,32 @@ class Department extends CI_Controller{
             $data['seo']['keywords'] = $data['cur_news']->meta_keyword;
             $data['seo']['description'] = ($data['cur_news']->meta_description != '') ? $data['cur_news']->meta_description : $data['cur_news']->description;
             $data['seo']['title'] = (($data['cur_news']->meta_title != '') ? $data['cur_news']->meta_title : $data['cur_news']->title);
+
+            //Training
+            $newsId = $this->db->where('alias', 'dao-tao')->get('category_news')->row_object()->id;
+
+            $posts = $this->db
+                ->where('publish', 1)
+                ->where('parentid', $newsId)
+                ->order_by('order', 'ASC')
+                ->order_by('id', 'ASC')
+                ->get('category_news')
+                ->result_object();
+
+            $data['trainingCategory'] = $posts;
+
+            $newsId = $this->db->where('alias', 'tin-tuc')->get('category_news')->row_object()->id;
+
+            //News
+            $posts = $this->db
+                ->where('publish', 1)
+                ->where('parentid', $newsId)
+                ->order_by('order', 'ASC')
+                ->order_by('id', 'ASC')
+                ->get('category_news')
+                ->result_object();
+
+            $data['departmentCategory'] = $posts;
 
         } else {
             redirect('/');

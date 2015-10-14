@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="col-lg-9 main-content-container">
-                <h3 class="news-container-heading">Câu hỏi thường gặp</h3>
+<!--                <h3 class="news-container-heading">Câu hỏi thường gặp</h3>-->
                 <div class="main-content col-md-12 row">
                     <?php if(isset($faq_data) && count($faq_data) > 0):?>
                     <ul class="faq-list">
