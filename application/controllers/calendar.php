@@ -157,6 +157,25 @@ class Calendar extends CI_Controller{
                         'href'  => current_url()
                     ),
                 );
+
+                $newsId = $this->db->where('alias', 'dao-tao')->get('category_news')->row_object()->id;
+
+                $posts = $this->db
+                    ->where('publish', 1)
+                    ->where('parentid', $newsId)
+                    ->order_by('order', 'ASC')
+                    ->order_by('id', 'ASC')
+                    ->get('category_news')
+                    ->result_object();
+
+                $return = '<ul class="left-panel-contain">';
+
+                foreach($posts as $_post){
+                    $return .= '<li class="subItems"><a href="'.$_post->alias.'">'.$_post->title.'</a></li>';
+                }
+
+                $return .= '</ul>';
+                $data['navLeft'] = $return;
                 
                 $data['active_nav'] = 'nav_training';
                 
@@ -166,23 +185,50 @@ class Calendar extends CI_Controller{
             {
                 $data['breadcrumb'] = array(
                     array(
-                        'title' => 'Đào Tạo',
-                        'href'  => '/dao-tao/'
+                        'title' => 'Thông tin NPP',
+                        'href'  => '/thong-tin-npp/'
                     ),
                     array(
-                        'title' => 'Lịch làm việc',
-                        'href'  => '/dao-tao/lich-lam-viec/'
+                        'title' => 'Lịch sự kiện',
+                        'href'  => '/thong-tin-npp/lich-su-kien-npp'
                     ),
                     array(
                         'title' => $data['detail']->title,
                         'href'  => current_url()
                     ),
                 );
+
+                $newsId = $this->db->where('alias', 'thong-tin-npp')->get('category_news')->row_object()->id;
+
+                $posts = $this->db
+                    ->where('publish', 1)
+                    ->where('parentid', $newsId)
+                    ->order_by('order', 'ASC')
+                    ->order_by('id', 'ASC')
+                    ->get('category_news')
+                    ->result_object();
+
+                $return = '<ul class="left-panel-contain">';
+
+                foreach($posts as $_post){
+                    $return .= '<li class="subItems"><a href="'.$_post->alias.'">'.$_post->title.'</a></li>';
+                }
+
+                $return .= '</ul>';
+                $data['navLeft'] = $return;
                 
                 $data['active_nav'] = 'nav_npp';
                 $data['tpl']                = 'frontend/calendar/event_detail';
             }
-                
+
+            $data['featuredProducts'] = $this->db
+                ->where('publish', 1)
+                ->where('is_featured', 1)
+                ->order_by('order', 'ASC')
+                ->order_by('created_date', 'DESC')
+                ->get('products')
+                ->result_object();
+
             if($this->configs->is_active){
                 $this->load->view('frontend/layout/1-column', $data);
             }else{

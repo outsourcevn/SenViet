@@ -76,7 +76,7 @@
                     <div class="col-md-12 item">
                         <div class="col-md-3" style="line-height: 200%;"><label for="content">Chi tiết sản phẩm</label><span class="text-warnign"><sup>(*)</sup></span></div>
                         <div class="col-md-9">
-                            <textarea name="content" class="form-control" required="" id="content"><?php echo (isset($post_data['content']) ? $post_data['content'] : '')?></textarea>
+                            <textarea name="content" class="form-control ckeditor" required="" id="content"><?php echo (isset($post_data['content']) ? $post_data['content'] : '')?></textarea>
                         </div>
                     </div>
                 </div>
@@ -136,8 +136,24 @@
                     <div class="col-md-12 item">
                         <div class="col-md-3" style="line-height: 200%;"><label for="publish">Sản phẩm nổi bật</label></div>
                         <div class="col-md-9">
-                            <label>Có <input type="radio" name="is_featured" class="" value="1" <?php echo ((isset($post_data['publish']) && $post_data['publish'] == 1) || !isset($post_data['publish'])) ? 'checked' : ''?>/></label>
-                            <label>Không <input type="radio" name="is_featured" class="" value="0" <?php echo (isset($post_data['publish']) && $post_data['publish'] == 0) ? 'checked' : ''?> /></label>
+                            <label>Có <input type="radio" name="is_featured" class="" value="1" <?php echo ((isset($post_data['publish']) && $post_data['publish'] == 1)) ? 'checked' : ''?>/></label>
+                            <label>Không <input type="radio" name="is_featured" class="" value="0" <?php echo ((isset($post_data['publish']) && $post_data['publish'] == 0) || !isset($post_data['publish'])) ? 'checked' : ''?> /></label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 item">
+                        <div class="col-md-3" style="line-height: 200%;"><label for="fb_share_like">Facebook Like & Share</label></div>
+                        <div class="col-md-9">
+                            <label>Có <input type="radio" name="fb_share_like" class="" value="1" <?php echo ((isset($post_data['fb_share_like']) && $post_data['fb_share_like'] == 1) || !isset($post_data['fb_share_like'])) ? 'checked' : ''?>/></label>
+                            <label>Không <input type="radio" name="fb_share_like" class="" value="0" <?php echo (isset($post_data['fb_share_like']) && $post_data['fb_share_like'] == 0) ? 'checked' : ''?> /></label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 item">
+                        <div class="col-md-3" style="line-height: 200%;"><label for="fb_comment">Facebook Comments</label></div>
+                        <div class="col-md-9">
+                            <label>Có <input type="radio" name="fb_comment" class="" value="1" <?php echo ((isset($post_data['fb_comment']) && $post_data['fb_comment'] == 1) || !isset($post_data['fb_comment']) ) ? 'checked' : ''?>/></label>
+                            <label>Không <input type="radio" name="fb_comment" class="" value="0" <?php echo (isset($post_data['fb_comment']) && $post_data['fb_comment'] == 0) ? 'checked' : ''?> /></label>
                         </div>
                     </div>
                 </div>

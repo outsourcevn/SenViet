@@ -149,6 +149,22 @@
                             <label>Ẩn <input type="radio" name="show_price" class="" value="0" <?php echo (isset($post_data['show_price']) && $post_data['show_price'] == 0) ? 'checked' : ''?> /></label>
                         </div>
                     </div>
+
+                    <div class="col-md-12 item">
+                        <div class="col-md-3" style="line-height: 200%;"><label for="fb_share_like">Facebook Like & Share</label></div>
+                        <div class="col-md-9">
+                            <label>Có <input type="radio" name="fb_share_like" class="" value="1" <?php echo ((isset($post_data['fb_share_like']) && $post_data['fb_share_like'] == 1)) ? 'checked' : ''?>/></label>
+                            <label>Không <input type="radio" name="fb_share_like" class="" value="0" <?php echo (isset($post_data['fb_share_like']) && $post_data['fb_share_like'] == 0 || !isset($post_data['fb_share_like'])) ? 'checked' : ''?> /></label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 item">
+                        <div class="col-md-3" style="line-height: 200%;"><label for="fb_comment">Facebook Comments</label></div>
+                        <div class="col-md-9">
+                            <label>Có <input type="radio" name="fb_comment" class="" value="1" <?php echo ((isset($post_data['fb_comment']) && $post_data['fb_comment'] == 1)) ? 'checked' : ''?>/></label>
+                            <label>Không <input type="radio" name="fb_comment" class="" value="0" <?php echo (isset($post_data['fb_comment']) && $post_data['fb_comment'] == 0 || !isset($post_data['fb_comment'])) ? 'checked' : ''?> /></label>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="col-md-12 item text-center">

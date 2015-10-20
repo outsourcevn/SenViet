@@ -14,24 +14,28 @@
         <div class="col-lg-12">
             <div class="col-lg-3 row">
                 <div class="panel-left">
-                    <div class="left-panel-heading">Tin Tức Khác</div>
-                    <div class="panel-left-body">
-                        <ul class="left-panel-contain">
-                            <li class="active"><a href="dao-tao/lich-lam-viec">Lịch làm việc</a></li>
-                            <li class=""><a href="dao-tao/chinh-sach-cong-ty">Chính sách công ty</a></li>
-                            <li class=""><a href="dao-tao/van-ban-phap-ly">Văn bản - pháp lý</a></li>
-                            <li class=""><a href="dao-tao/kien-thuc-san-pham">Kiến thức - Sản phẩm</a></li>
-                            <li class=""><a href="dao-tao/dao-tao-nang-cao">Đào tạo - Nâng cao</a></li>
-                        </ul>
-                    </div>
+                    <?php if(isset($navLeft)) : ?>
+                        <div class="left-panel-heading">Tin Tức Khác</div>
+                        <div class="panel-left-body">
+                            <?php echo $navLeft; ?>
+                        </div>
+                    <?php endif;?>
                 </div>
                 <?php if(isset($featuredProducts) && is_array($featuredProducts) && count($featuredProducts) > 0) :?>
                 <div class="panel-left">
                         <div class="left-panel-heading">Sản phẩm nổi bật</div>
                         <div class="panel-left-body">
                             <ul class="left-panel-contain">
-                                <?php foreach($featuredProducts as $_product):?>
-                                    <li><a href="<?php echo "/san-pham/".$_product->alias?>.html"><?php echo $_product->title?></a></li>
+                                <?php foreach($featuredProducts as $_product):
+                                    $featuredImage = get_image_list($_product->id, true);
+                                    ?>
+                                    <li>
+                                        <?php if(isset($featuredImage)) : ?>
+                                            <a href="<?php echo "/san-pham/".$_product->alias?>.html" style="float: left; width: 30%; max-width: 70px;"><img style="width: 100%" src="<?php echo urldecode($featuredImage->image_link);?>" alt="<?php echo $featuredImage->title?>"/></a>
+                                        <?php endif;?>
+                                        <a href="<?php echo "/san-pham/".$_product->alias?>.html" style="float: left; width: 68%; padding-left: 4px; overflow: hidden"><?php echo $_product->title?></a>
+                                        <div style="clear: both"></div>
+                                    </li>
                                 <?php endforeach;?>
                             </ul>
                         </div>

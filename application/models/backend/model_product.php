@@ -22,6 +22,8 @@ Class Model_product extends CI_Model
     var $updated_date = null;
     var $userid_created = 1;
     var $show_price = 1;
+    var $fb_share_like = 1;
+    var $fb_comment = 1;
 
     /**
      * Day cac bien tu du lieu truyen ve ra doi tuong

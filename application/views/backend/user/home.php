@@ -4,5 +4,9 @@
         <li><a href="<?php echo CMS_DEFAULT_BACKEND_URL?>">Trang chủ</a></li>
     </ol>
     
-    <p>SenViet CMS version 1.0</p>
+    <div class="col-lg-12 text-center">
+        <strong>SenViet CMS version 1.0</strong>
+        <br/>
+        <strong>HỆ THỐNG QUẢN LÝ NỘI DUNG SENVIET</strong>
+    </div>
 </div>

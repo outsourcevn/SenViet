@@ -110,9 +110,11 @@
                             <?php echo html_entity_decode($cur_product->description);?>
                         </div>
                         <div class="clearfix"></div>
+                        <?php if($cur_product->fb_share_like == 1) :?>
                         <div class="social-links">
                             <div class="fb-like" data-share="true"></div>
                         </div>
+                        <?php endif;?>
                     </div>
 
                     <div class="clearfix"></div>

@@ -34,8 +34,16 @@
                         <div class="left-panel-heading">Sản phẩm nổi bật</div>
                         <div class="panel-left-body">
                             <ul class="left-panel-contain">
-                                <?php foreach($featuredProducts as $_product):?>
-                                    <li><a href="<?php echo "/san-pham/".$_product->alias?>.html"><?php echo $_product->title?></a></li>
+                                <?php foreach($featuredProducts as $_product):
+                                    $featuredImage = get_image_list($_product->id, true);
+                                    ?>
+                                    <li>
+                                        <?php if(isset($featuredImage)) : ?>
+                                            <a href="<?php echo "/san-pham/".$_product->alias?>.html" style="float: left; width: 30%; max-width: 70px;"><img style="width: 100%" src="<?php echo urldecode($featuredImage->image_link);?>" alt="<?php echo $featuredImage->title?>"/></a>
+                                        <?php endif;?>
+                                        <a href="<?php echo "/san-pham/".$_product->alias?>.html" style="float: left; width: 68%; padding-left: 4px; overflow: hidden"><?php echo $_product->title?></a>
+                                        <div style="clear: both"></div>
+                                    </li>
                                 <?php endforeach;?>
                             </ul>
                         </div>
