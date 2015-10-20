@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title><?php echo (isset($seo['title']) ? ($seo['title'] . ' - ') : "") ;echo ($configuration->meta_title) ? $configuration->meta_title : 'Công ty cổ phần ĐT SX &amp; TM Sen Việt Group';?></title>
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="<?php echo (isset($seo['description']) ? ($seo['description'] . ' - ') : "") ;echo ($configuration->meta_description) ? $configuration->meta_description : 'Công ty cổ phần ĐT SX &amp; TM Sen Việt Group'?>">
     <meta name="keywords" content="<?php echo (isset($seo['keywords']) ? ($seo['keywords'] . ', ') : "") ;echo ($configuration->meta_keyword) ? $configuration->meta_keyword : 'Công ty cổ phần ĐT SX &amp; TM Sen Việt Group'?>">
