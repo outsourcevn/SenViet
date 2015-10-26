@@ -13,7 +13,7 @@
         <div class="navbar-collapse collapse" id="navbar">
             <ul class="nav navbar-nav">
                 <li class="nav_home"><a href="<?php echo base_url()?>">Trang chủ</a></li>
-                <li class="nav_introduce"><a href="/gioi-thieu/">Giới thiệu</a></li>
+                <li class="nav_introduce"><a href="/gioi-thieu/thu-ngo.html">Giới thiệu</a></li>
                 <li class="nav_news"><a href="/tin-tuc/">Tin tức</a></li>
                 <li class="nav_product"><a href="/san-pham/">Sản phẩm</a></li>
                 <li class="nav_training"><a href="/dao-tao/">Đào Tạo</a></li>
@@ -60,7 +60,7 @@
         <ul class="pull-left main-nav">
             <li  class="nav_home"><a href="<?php echo base_url()?>">Trang chủ</a></li>
             <li class="nav_introduce">
-                <a href="/gioi-thieu/">Giới thiệu</a>
+                <a href="/gioi-thieu/thu-ngo.html">Giới thiệu</a>
                 <?php echo genIntroduceNavItem();?>
             </li>
             <li class="nav_news">

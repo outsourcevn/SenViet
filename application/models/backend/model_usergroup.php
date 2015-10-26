@@ -11,6 +11,7 @@ Class Model_usergroup extends CI_Model
     var $userid_created;
     var $permission_key = '["controller\/user\/info"]';
     var $status = 1;
+    var $receive_mail = 0;
 
 
     /**
@@ -82,12 +83,13 @@ Class Model_usergroup extends CI_Model
      * @param array
      * @return Num Rows Affected
      **/
-    public function InsertNewItem($title = '', $uid = 1, $perm = NULL)
+    public function InsertNewItem($title = '', $uid = 1, $perm = NULL, $receive_mail)
     {
         $this->title = $title;
         $this->created_date = gmdate('Y-m-d H:i:s');
         $this->updated_date = gmdate('Y-m-d H:i:s');
         $this->userid_created = $uid;
+        $this->receive_mail = $receive_mail;
 
         if (isset($perm) && $perm != null) {
             $this->permission_key = json_encode($perm);

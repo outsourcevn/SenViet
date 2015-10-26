@@ -37,7 +37,8 @@ class Faq extends CI_Controller
         $query = $this->db->where('publish', 1)->where('id', $id)->get('faq_sheet');
         if ($query->num_rows() == 1) {
             $file = $query->row_object();
-
+            $file->downloaded_times = $file->downloaded_times+1;
+            $this->db->where('id', $id)->update('faq_sheet', $file);
             $workPath = getcwd();
             $file->link = urldecode($file->link);
 

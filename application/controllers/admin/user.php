@@ -405,12 +405,12 @@ class User extends CI_Controller {
             $this->form_validation->set_message('required', '%s không được để trống.');
             
             if($this->form_validation->run() == TRUE){
-                $input_data = $this->mycommonlib->Filter_Field($data['post_data'], array('title', 'permission_key'));
+                $input_data = $this->mycommonlib->Filter_Field($data['post_data'], array('title', 'permission_key', 'receive_mail'));
                 if(!isset($input_data['permission_key'])){
                     $input_data['permission_key'] = array();
                 }
                 
-                if($this->Musergroup->InsertNewItem($input_data['title'], $this->auth['id'], $input_data['permission_key']))
+                if($this->Musergroup->InsertNewItem($input_data['title'], $this->auth['id'], $input_data['permission_key'], $input_data['receive_mail']))
                 {
                     $this->mycommonlib->redir_alert('Thêm mới thành công', CMS_DEFAULT_BACKEND_URL.'/user/usergroup');
                 }else{
@@ -454,7 +454,7 @@ class User extends CI_Controller {
             $data['post_data'] = $this->input->post();
             
             if($this->form_validation->run() == TRUE){
-                $input_data = $this->mycommonlib->Filter_Field($data['post_data'], array('title', 'permission_key'));
+                $input_data = $this->mycommonlib->Filter_Field($data['post_data'], array('title', 'permission_key', 'receive_mail'));
                 if(!isset($input_data['permission_key'])){
                     $input_data['permission_key'] = array();
                 }

@@ -1,21 +1,6 @@
 <div class="content">
     <div class="container">
         <div class="col-lg-12">
-            <div class="col-lg-3 row"></div>
-            <div class="col-lg-9 row">
-                <ol class="breadcrumb">
-                    <?php foreach($breadcrumb as $_item) :?>
-                        <?php if($_item->id == 1):?>
-                            <li><a href="/san-pham/"><i>Trang chủ</i></a></li>
-                        <?php else:?>
-                            <li><a href="/san-pham/<?php echo $_item->alias;?>"><i><?php echo $_item->title;?></i></a></li>
-                        <?php endif;?>
-                    <?php endforeach;?>
-                    <li class="active"><a href="/san-pham/<?php echo $cur_product->alias;?>.html"><i><?php echo $cur_product->title;?></i></a></li>
-                </ol>
-            </div>
-        </div>
-        <div class="col-lg-12">
             <div class="col-lg-3 row">
                 <?php if(isset($category_list) && is_array($category_list) && count($category_list) > 0) :?>
                     <div class="panel-left">
@@ -37,9 +22,17 @@
                     <div class="panel-left">
                         <div class="left-panel-heading">Sản phẩm nổi bật</div>
                         <div class="panel-left-body">
-                            <ul class="left-panel-contain">
-                                <?php foreach($featuredProducts as $_product):?>
-                                    <li><a href="/san-pham/<?php echo $_product->alias?>.html"><?php echo $_product->title?></a></li>
+                            <ul class="left-panel-contain featured-products">
+                                <?php foreach($featuredProducts as $_product):
+                                    $featuredImage = get_image_list($_product->id, true);
+                                    ?>
+                                    <li>
+                                        <?php if(isset($featuredImage)) : ?>
+                                            <a href="<?php echo "/san-pham/".$_product->alias?>.html"><img src="<?php echo urldecode($featuredImage->image_link);?>" alt="<?php echo $featuredImage->title?>"/></a>
+                                        <?php endif;?>
+                                        <a href="<?php echo "/san-pham/".$_product->alias?>.html"><?php echo $_product->title?></a>
+                                        <div style="clear: both"></div>
+                                    </li>
                                 <?php endforeach;?>
                             </ul>
                         </div>
@@ -48,6 +41,16 @@
             </div>
 
             <div class="col-lg-9 main-content-container">
+                <ol class="breadcrumb">
+                    <?php foreach($breadcrumb as $_item) :?>
+                        <?php if($_item->id == 1):?>
+                            <li><a href="/san-pham/"><i>Trang chủ</i></a></li>
+                        <?php else:?>
+                            <li><a href="/san-pham/<?php echo $_item->alias;?>"><i><?php echo $_item->title;?></i></a></li>
+                        <?php endif;?>
+                    <?php endforeach;?>
+                    <li class="active"><a href="/san-pham/<?php echo $cur_product->alias;?>.html"><i><?php echo $cur_product->title;?></i></a></li>
+                </ol>
 <!--                <h3 class="news-container-heading">--><?php //echo $cur_product->title;?><!--</h3>-->
                 <div class="main-product-content col-md-12 row">
                     <div class="col-md-6 product-img-slider">

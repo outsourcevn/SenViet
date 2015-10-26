@@ -1,16 +1,6 @@
 <div class="content">
     <div class="container">
         <div class="col-lg-12">
-            <div class="col-lg-3 row"></div>
-            <div class="col-lg-9 row">
-                <ol class="breadcrumb">
-                    <li><a href="<?php echo base_url();?>"><i>Trang chủ</i></a></li>
-                    <li><a href="/tro-giup/"><i>Trợ giúp</i></a></li>
-                    <li class="active"><i>Hỏi đáp thường gặp</i></li>
-                </ol>
-            </div>
-        </div>
-        <div class="col-lg-12">
             <div class="col-lg-3 row">
                 <div class="panel-left">
                     <div class="left-panel-heading">Trợ giúp khác</div>
@@ -24,6 +14,11 @@
                 </div>
             </div>
             <div class="col-lg-9 main-content-container">
+                <ol class="breadcrumb">
+                    <li><a href="<?php echo base_url();?>"><i>Trang chủ</i></a></li>
+                    <li><a href="/tro-giup/"><i>Trợ giúp</i></a></li>
+                    <li class="active"><i>Hỏi đáp thường gặp</i></li>
+                </ol>
 <!--                <h3 class="news-container-heading">Câu hỏi thường gặp</h3>-->
                 <div class="main-content col-md-12 row">
                     <?php if(isset($faq_data) && count($faq_data) > 0):?>

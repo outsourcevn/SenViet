@@ -1,16 +1,6 @@
 <div class="content">
     <div class="container">
         <div class="col-lg-12">
-            <div class="col-lg-3 row"></div>
-            <div class="col-lg-9 row">
-                <ol class="breadcrumb">
-                    <li><a href="<?php echo base_url();?>"><i>Trang chủ</i></a></li>
-                    <li><a href="/tro-giup/"><i>Trợ giúp</i></a></li>
-                    <li class="active"><i>Quy Trình - Biểu Mẫu</i></li>
-                </ol>
-            </div>
-        </div>
-        <div class="col-lg-12">
             <div class="col-lg-3 row">
                 <div class="panel-left">
                     <div class="left-panel-heading">Trợ giúp khác</div>
@@ -24,6 +14,11 @@
                 </div>
             </div>
             <div class="col-lg-9 main-content-container">
+                <ol class="breadcrumb">
+                    <li><a href="<?php echo base_url();?>"><i>Trang chủ</i></a></li>
+                    <li><a href="/tro-giup/"><i>Trợ giúp</i></a></li>
+                    <li class="active"><i>Quy Trình - Biểu Mẫu</i></li>
+                </ol>
 <!--                <h3 class="news-container-heading">Quy Trình - Biểu Mẫu</h3>-->
                 <div class="main-content col-md-12">
                     <?php if(isset($sheet_data) && count($sheet_data) > 0):?>
@@ -44,8 +39,8 @@
                             <tr>
                                 <td style="text-align: center;"><?php echo $_sheet->file_name;?></td>
                                 <td style="text-align: center;"><?php echo number_format(filesize($workFolder.$_sheet->link)/1024);?> KB</td>
-                                <td style="text-align: center;"><?php echo $_sheet->update_times;?></td>
                                 <td style="text-align: center;"><?php echo $_sheet->downloaded_times;?></td>
+                                <td style="text-align: center;"><?php echo $_sheet->update_times;?></td>
                                 <td style="text-align: center;"><a href="/tro-giup/quy-trinh-bieu-mau/?id=<?php echo $_sheet->id;?>"><span class="glyphicon glyphicon-cloud-download" style="color: #ffa84d;"></span></a></td>
                             </tr>
                             <?php endif; endforeach;?>

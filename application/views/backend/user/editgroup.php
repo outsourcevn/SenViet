@@ -35,6 +35,12 @@
             </div>
             <div class="col-md-12">
                 <fieldset class="usergroup_permission">
+                    <legend><h4>Receive Message</h4></legend>
+                    <ul class="permission_list">
+                        <li class="checkbox"><label><input type="checkbox" name="receive_mail" <?php echo (isset($post_data['receive_mail']) && $post_data['receive_mail'] == 1)? 'checked' : ''?> value="1" />Receive Message</label></li>
+                    </ul>
+                </fieldset>
+                <fieldset class="usergroup_permission">
                     <legend><h4>Quyền truy cập</h4></legend>
                     <ul class="permission_list">
                     <?php

@@ -20,7 +20,7 @@ class Contact extends CI_Controller {
         $data['configuration']->meta_title .= ' - Liên hệ';
         $data['active_nav'] = 'nav_contact';
 
-        $data['usergroup'] = $this->db->order_by('id', 'ASC')->get('usergroup')->result_object();
+        $data['usergroup'] = $this->db->where('receive_mail', 1)->order_by('id', 'ASC')->get('usergroup')->result_object();
 
         //View
         $data['tpl']                = 'frontend/contacts/home';

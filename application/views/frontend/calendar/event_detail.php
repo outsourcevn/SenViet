@@ -1,17 +1,6 @@
 <div class="content">
     <div class="container">
         <div class="col-lg-12">
-            <div class="col-lg-3 row"></div>
-            <div class="col-lg-9 row">
-                <ol class="breadcrumb">
-                    <li><a href="<?php echo base_url();?>"><i>Trang chủ</i></a></li>
-                    <?php foreach($breadcrumb as $_item):?>
-                    <li><a href="<?php echo $_item['href'];?>"><i><?php echo $_item['title'];?></i></a></li>
-                    <?php endforeach;?>
-                </ol>
-            </div>
-        </div>
-        <div class="col-lg-12">
             <div class="col-lg-3 row">
                 <div class="panel-left">
                     <?php if(isset($navLeft)) : ?>
@@ -25,15 +14,15 @@
                 <div class="panel-left">
                         <div class="left-panel-heading">Sản phẩm nổi bật</div>
                         <div class="panel-left-body">
-                            <ul class="left-panel-contain">
+                            <ul class="left-panel-contain featured-products">
                                 <?php foreach($featuredProducts as $_product):
                                     $featuredImage = get_image_list($_product->id, true);
                                     ?>
                                     <li>
                                         <?php if(isset($featuredImage)) : ?>
-                                            <a href="<?php echo "/san-pham/".$_product->alias?>.html" style="float: left; width: 30%; max-width: 70px;"><img style="width: 100%" src="<?php echo urldecode($featuredImage->image_link);?>" alt="<?php echo $featuredImage->title?>"/></a>
+                                            <a href="<?php echo "/san-pham/".$_product->alias?>.html"><img src="<?php echo urldecode($featuredImage->image_link);?>" alt="<?php echo $featuredImage->title?>"/></a>
                                         <?php endif;?>
-                                        <a href="<?php echo "/san-pham/".$_product->alias?>.html" style="float: left; width: 68%; padding-left: 4px; overflow: hidden"><?php echo $_product->title?></a>
+                                        <a href="<?php echo "/san-pham/".$_product->alias?>.html"><?php echo $_product->title?></a>
                                         <div style="clear: both"></div>
                                     </li>
                                 <?php endforeach;?>
@@ -43,6 +32,12 @@
                 <?php endif;?>
             </div>
             <div class="col-lg-9 main-content-container">
+                <ol class="breadcrumb">
+                    <li><a href="<?php echo base_url();?>"><i>Trang chủ</i></a></li>
+                    <?php foreach($breadcrumb as $_item):?>
+                        <li><a href="<?php echo $_item['href'];?>"><i><?php echo $_item['title'];?></i></a></li>
+                    <?php endforeach;?>
+                </ol>
 <!--                <h3 class="news-container-heading">--><?php //echo $detail->title;?><!--</h3>-->
                 <article class="col-md-12 item row">
                     <div class="col-md-12 row text-justify">

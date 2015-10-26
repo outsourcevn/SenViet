@@ -10,7 +10,7 @@
         </ul>
 
         <ul class="footer-links">
-            <li><span class="footer-heading"><a href="<?php echo base_url()?>">Trang chủ</a> • <a href="/lien-he/">Liên hệ</a> • <a href="/tro-giup/">Trợ giúp</a> • <a href="#">quy định sử dụng</a> • <a href="#">sơ đồ site</a></span></li>
+            <li><span class="footer-heading"><a href="<?php echo base_url()?>">Trang chủ</a> • <a href="/lien-he/">Liên hệ</a> • <a href="/tro-giup/">Trợ giúp</a> • <a href="/quy-dinh-su-dung.html">quy định sử dụng</a></span></li>
             <li>© Copyright Sen Viet Group 2015</li>
             <li>Design by Solution </li>
         </ul>

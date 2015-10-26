@@ -1,21 +1,6 @@
 <div class="content">
     <div class="container">
         <div class="col-lg-12">
-            <div class="col-lg-3 row"></div>
-            <div class="col-lg-9 row">
-                <ol class="breadcrumb">
-                    <?php foreach($breadcrumb as $_item) :?>
-                        <?php if($_item->id === 1):?>
-                            <li><a href="<?php echo base_url();?>"><i>Trang chủ</i></a></li>
-                        <?php else:?>
-                            <li><a href="<?php echo $_item->alias;?>"><i><?php echo $_item->title;?></i></a></li>
-                        <?php endif;?>
-                    <?php endforeach;?>
-                    <li><a href="<?php echo $cur_news->alias;?>.html"><i><?php echo $cur_news->title;?></i></a></li>
-                </ol>
-            </div>
-        </div>
-        <div class="col-lg-12">
             <div class="col-lg-3 row">
                 <?php if(isset($introduceNews) && is_array($introduceNews) && count($introduceNews) > 0) :?>
                 <div class="panel-left">
@@ -60,6 +45,16 @@
 
             </div>
             <div class="col-lg-9 main-content-container">
+                <ol class="breadcrumb">
+                    <?php foreach($breadcrumb as $_item) :?>
+                        <?php if($_item->id === 1):?>
+                            <li><a href="<?php echo base_url();?>"><i>Trang chủ</i></a></li>
+                        <?php else:?>
+                            <li><a href="<?php echo $_item->alias;?>"><i><?php echo $_item->title;?></i></a></li>
+                        <?php endif;?>
+                    <?php endforeach;?>
+                    <li><a href="<?php echo $cur_news->alias;?>.html"><i><?php echo $cur_news->title;?></i></a></li>
+                </ol>
 <!--                <h3 class="news-container-heading">--><?php //echo $cur_news->title;?><!--</h3>-->
                 <article class="col-md-12 item row">
                     <div class="col-md-12 row text-justify">

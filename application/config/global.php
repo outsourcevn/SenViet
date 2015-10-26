@@ -4,7 +4,7 @@ define('CMS_FOLDER', '');
 
 define('CMS_DB_HOST', 'senvietgroup.vn');
 define('CMS_DB_USERNAME', 'senviet_dev');
-define('CMS_DB_PASSWORD', 'enJF7fYTYZDVqB9J');
+define('CMS_DB_PASSWORD', 'senviet123123');
 define('CMS_DB_NAME', 'senviet_dev');
 define('CMS_DB_PREFIX', 'cms_');
 

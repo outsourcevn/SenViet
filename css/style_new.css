@@ -322,6 +322,7 @@ footer div.banking{
 
 .breadcrumb{
     background: none;
+    padding: 0px;
 }
 
 .breadcrumb > li + li::before{
@@ -595,4 +596,15 @@ button.contact-message-send:focus{
 
 .main-product-content.col-md-12.row{
     padding-top: 15px;
+}
+
+.panel-left-body ul.left-panel-contain.featured-products li a{
+    width: 100%;
+    text-align: center;
+}
+
+.panel-left-body ul.left-panel-contain.featured-products li a img{
+    width: 60%;
+    max-width: 150px;
+    margin: 5px;
 }

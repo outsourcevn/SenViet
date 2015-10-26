@@ -161,7 +161,8 @@ Class Model_faq_sheet extends CI_Model
         unset($NewData['id']);
 
         $NewData['updated_date'] = gmdate('Y-m-d H:i:s');
-        $this->update_times = $this->update_times + 1;
+        $NewData['update_times'] =$this->update_times + 1;
+
         $this->db->update(self::DB_TABLE, $NewData, array('id' => $id));
 
         return $this->db->affected_rows();

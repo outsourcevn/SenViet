@@ -135,10 +135,10 @@ class Faq_sheet extends CI_Controller {
         $data['post_data'] = (array)$data['post_data'];
 
         if($this->input->post()){
-            $data['post_data'] = $this->mycommonlib->Filter_Field($this->input->post(), array('question', 'answer','publish'));
+            $data['post_data'] = $this->mycommonlib->Filter_Field($this->input->post(), array('file_name', 'link','publish'));
 
-            $this->form_validation->set_rules('question', 'Câu hỏi', 'required');
-            $this->form_validation->set_rules('question', 'Câu trả lời', 'required');
+            $this->form_validation->set_rules('file_name', 'Tên file', 'required');
+            $this->form_validation->set_rules('link', 'Link file', 'required');
 
             $this->form_validation->set_message('required', '%s không được để trống.');
 

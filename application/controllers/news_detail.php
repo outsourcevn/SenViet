@@ -26,7 +26,7 @@ class News_detail extends CI_Controller{
         if($rs->num_rows() == 1) {
             $data['cur_news'] = $rs->row_object();
             $data['seo']['og_image'] = $data['cur_news']->thumbnail;
-            $data['cur_category'] = $this->db->where('id', $data['cur_news']->category_id)->where('publish', 1)->get('category_news')->row_object();
+            $data['cur_category'] = $this->db->where('id', $data['cur_news']->category_id)->get('category_news')->row_object();
 
             $data['breadcrumb'] = $this->db->where('lft <=', $data['cur_category']->lft)->where('rgt >=', $data['cur_category']->rgt)->get('category_news')->result_object();
 
@@ -59,7 +59,7 @@ class News_detail extends CI_Controller{
             $data['featuredProducts'] = $this->db
                 ->where('publish', 1)
                 ->where('is_featured', 1)
-                ->order_by('created_date', 'DESC')
+                ->order_by('order', 'ASC')
                 ->get('products')
                 ->result_object();
 

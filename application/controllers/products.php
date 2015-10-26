@@ -108,6 +108,13 @@ class Products extends CI_Controller{
             }
         }
 
+        $data['featuredProducts'] = $this->db
+            ->where('publish', 1)
+            ->where('is_featured', 1)
+            ->order_by('order', 'ASC')
+            ->get('products')
+            ->result_object();
+
         //View
         $data['breadcrumb'] = $this->db->where('lft <=', $category->lft)->where('rgt >=', $category->rgt)->get('category')->result_object();
         $data['category_list']      = $this->db->where('publish', 1)->order_by('lft', 'ASC')->get('category')->result_object();
