@@ -161,7 +161,9 @@ Class Model_usergroup extends CI_Model
     {
         $this->SelectByID($id);
         unset($NewData['id']);
-
+        if(!isset($NewData['receive_mail'])){
+            $NewData['receive_mail'] = 0;
+        }
         $NewData['permission_key'] = json_encode($NewData['permission_key']);
         $NewData['updated_date'] = gmdate('Y-m-d H:i:s');
         $this->db->update(self::DB_TABLE, $NewData, array('id' => $id));
