@@ -32,7 +32,7 @@
             <div class="col-md-12 item">
                 <div class="col-md-3" style="line-height: 200%;"><label for="question">Câu hỏi</label></div>
                 <div class="col-md-9">
-                    <textarea id="question" name="question" class="form-control ckeditor" title="Câu hỏi"><?php echo (isset($post_data['question'])? $post_data['question'] : '')?></textarea>
+                    <textarea id="question" name="question" class="form-control" title="Câu hỏi"><?php echo (isset($post_data['question'])? $post_data['question'] : '')?></textarea>
                 </div>
             </div>
 
