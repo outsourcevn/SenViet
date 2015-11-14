@@ -26,10 +26,10 @@
                         <?php foreach($faq_data as $_faq):?>
                         <li id="faq-<?php echo $_faq->id;?>">
                             <div class="col-lg-12 faq-question" data-for="answer-<?php echo $_faq->id;?>">
-                                <span class="icon-question"></span> <strong><?php echo $_faq->question;?></strong> <span class="glyphicon glyphicon-chevron-right"></span>
+                                <span class="icon-question"></span> <strong><?php echo html_entity_decode($_faq->question);?></strong> <span class="glyphicon glyphicon-chevron-right"></span>
                             </div>
 
-                            <div class="col-lg-12 faq-answer" id="answer-<?php echo $_faq->id;?>"><span class="icon-answer"></span> <?php echo $_faq->answer;?></div>
+                            <div class="col-lg-12 faq-answer" id="answer-<?php echo $_faq->id;?>"><span class="icon-answer"></span> <?php echo html_entity_decode($_faq->answer);?></div>
                             <div class="clearfix"></div>
                         </li>
                         <?php endforeach;?>
